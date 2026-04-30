@@ -378,8 +378,6 @@
     FormValidation.init();
     DataTable.init();
     
-    console.log(`%c${this.name} v${this.version}`, 'color: #2563EB; font-weight: bold; font-size: 14px;');
-    console.log('%cReady to use! 🚀', 'color: #059669;');
   };
 
   /* ========================================

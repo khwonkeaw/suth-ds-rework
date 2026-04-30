@@ -4309,7 +4309,8 @@
           </div>
         </div>
       </section>
-            <!-- Forms -->
+      
+      <!-- Forms -->
       <section class="ds-section" id="forms">
         <div class="ds-section-header">
           <div>
@@ -8210,13 +8211,7 @@
       });
     });
     
-    // ========================================
-    // INITIALIZE
-    // ========================================
-    document.addEventListener('DOMContentLoaded', () => {
-      console.log('%cSUTH Design System v2.0.0', 'color: #2563EB; font-weight: bold; font-size: 16px;');
-      console.log('%cReady to use! 🚀', 'color: #059669; font-size: 12px;');
-    });
+    
   </script>
 </body>
 </html>
