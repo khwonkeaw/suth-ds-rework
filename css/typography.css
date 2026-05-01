@@ -1,0 +1,43 @@
+/* ========================================
+   TYPOGRAPHY SHOWCASE
+   ======================================== */
+.type-specimen {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px 32px;
+  align-items: center;
+}
+
+@media (max-width: 640px) {
+  .type-specimen {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+.type-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: var(--font-mono);
+}
+
+@media (max-width: 640px) {
+  .type-label {
+    margin-top: 16px;
+  }
+}
+
+/* ========================================
+   FONT FACES FOR SUT FONT
+   ======================================== */
+@font-face { font-family: 'SUT'; src: url('../Fonts/SUT Light ver 1.00.ttf') format('truetype'); font-weight: 300; }
+@font-face { font-family: 'SUT'; src: url('../Fonts/SUT Regular ver 1.00.ttf') format('truetype'); font-weight: 400; }
+@font-face { font-family: 'SUT'; src: url('../Fonts/SUT Bold ver 1.00.ttf') format('truetype'); font-weight: 700; }
+
+.sut-font { font-family: 'SUT', sans-serif; }
+.sut-300 { font-weight: 300; }
+.sut-400 { font-weight: 400; }
+.sut-700 { font-weight: 700; }

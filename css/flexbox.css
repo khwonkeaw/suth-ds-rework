@@ -1,0 +1,33 @@
+/* ========================================
+   GRID SYSTEM DEMO
+   ======================================== */
+.grid-demo {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.grid-demo-item {
+  padding: 24px;
+  background: var(--primary-50);
+  border: 2px dashed var(--primary-200);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  font-weight: 500;
+  color: var(--primary-700);
+}
+
+.grid-demo-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-demo-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-demo-4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 768px) {
+  .grid-demo-3,
+  .grid-demo-4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .grid-demo-2,
+  .grid-demo-3,
+  .grid-demo-4 { grid-template-columns: 1fr; }
+}

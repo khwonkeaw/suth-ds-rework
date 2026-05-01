@@ -1,0 +1,18 @@
+/* ========================================
+   ACCORDION ENHANCED
+   ======================================== */
+.accordion-enhanced .accordion-header {
+  transition: var(--transition-smooth);
+}
+
+.accordion-enhanced .accordion-header:hover {
+  background: linear-gradient(to right, var(--ui-bg-elevated), var(--ui-bg));
+}
+
+.accordion-enhanced .accordion-icon {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion-enhanced .accordion-item.active .accordion-icon {
+  transform: rotate(180deg);
+}

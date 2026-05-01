@@ -1,0 +1,22 @@
+/* ========================================
+   BADGES ANIMATIONS
+   ======================================== */
+.badge-pulse {
+  position: relative;
+}
+
+.badge-pulse::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: inherit;
+  opacity: 0.4;
+  animation: pulse-badge 2s infinite;
+  z-index: -1;
+}
+
+@keyframes pulse-badge {
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.1); opacity: 0; }
+}

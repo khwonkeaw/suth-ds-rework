@@ -1,0 +1,14 @@
+/* ========================================
+   PROGRESS DEMO
+   ======================================== */
+/* Animated Progress */
+.progress-animated .progress-bar {
+  background: linear-gradient(90deg, var(--primary-600) 0%, var(--primary-400) 50%, var(--primary-600) 100%);
+  background-size: 200% 100%;
+  animation: shimmer-progress 2s infinite;
+}
+
+@keyframes shimmer-progress {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

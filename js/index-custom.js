@@ -492,14 +492,13 @@
     // ========================================
     // ACTIVE NAVIGATION HIGHLIGHTING
     // ========================================
-    function updateActiveNav() {
+    function highlightActiveSection() {
       const sections = document.querySelectorAll('.ds-section');
       const navLinks = document.querySelectorAll('.ds-nav-link');
       
       let current = '';
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
         if (window.scrollY >= sectionTop - 200) {
           current = section.getAttribute('id');
         }
@@ -513,7 +512,7 @@
       });
     }
     
-    window.addEventListener('scroll', updateActiveNav);
+    window.addEventListener('scroll', highlightActiveSection);
     
     // ========================================
     // SMOOTH SCROLL FOR NAV LINKS
@@ -521,19 +520,65 @@
     function bindNavLinks() {
       document.querySelectorAll('.ds-nav-link').forEach(link => {
         link.addEventListener('click', function(e) {
-          // Skip if link opens in new tab (external links like icons.html)
           if (this.getAttribute('target') === '_blank') {
-            return; // Let the browser handle it normally
+            return; // External or new-tab links should work normally
+          }
+
+          const href = this.getAttribute('href') || '';
+          if (!href.startsWith('#')) {
+            return;
           }
 
           e.preventDefault();
-          const targetId = this.getAttribute('href').substring(1);
-          const target = document.getElementById(targetId);
+          const pageName = href.substring(1);
+          const target = document.getElementById(pageName);
+
           if (target) {
             target.scrollIntoView({ behavior: 'smooth' });
             closeSidebar();
+            return;
+          }
+
+          if (pageName) {
+            window.location.hash = pageName;
           }
         });
+      });
+    }
+
+    function getPageFromHash() {
+      const hash = window.location.hash.replace(/^#/, '').trim();
+      return hash || 'introduction';
+    }
+
+    function executePageScripts(doc) {
+      const scripts = Array.from(doc.querySelectorAll('script'));
+
+      scripts.forEach(script => {
+        if (script.src) {
+          const src = script.src;
+          if (!document.querySelector(`script[src="${src}"]`)) {
+            const newScript = document.createElement('script');
+            newScript.src = src;
+            newScript.async = false;
+            document.body.appendChild(newScript);
+          }
+        } else {
+          const inlineScript = document.createElement('script');
+          inlineScript.textContent = script.textContent;
+          document.body.appendChild(inlineScript);
+          document.body.removeChild(inlineScript);
+        }
+      });
+    }
+
+    function updateActiveNav(pageName) {
+      document.querySelectorAll('.ds-nav-link').forEach(link => {
+        if (link.getAttribute('href') === `#${pageName}`) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
       });
     }
 
@@ -541,80 +586,127 @@
       const container = document.getElementById(targetId);
       if (!container) {
         console.warn(`Layout placeholder missing: ${targetId}`);
-        return {targetId, status: 'missing'};
+        return { targetId, status: 'missing' };
       }
 
-      const candidates = [
-        path,
-        `./${path}`,
-        path.replace(/^src\//, 'components/'),
-        `./${path.replace(/^src\//, 'components/')}`
-      ];
-      let lastError = null;
-
-      for (const candidate of candidates) {
-        try {
-          const response = await fetch(candidate);
-          if (!response.ok) throw new Error(`Failed to load ${candidate} (${response.status})`);
-          const html = await response.text();
-          container.innerHTML = html;
-          return {targetId, status: 'fulfilled', path: candidate};
-        } catch (error) {
-          lastError = error;
-          console.warn(`Fragment load failed for ${targetId} at ${candidate}:`, error);
-        }
+      try {
+        const response = await fetch(path);
+        if (!response.ok) throw new Error(`Failed to load ${path} (${response.status})`);
+        const html = await response.text();
+        container.innerHTML = html;
+        return { targetId, status: 'fulfilled', path };
+      } catch (error) {
+        console.warn(`Failed loading fragment ${path}:`, error);
+        container.innerHTML = `<div class="layout-error" style="padding: 18px; border: 1px solid #f0ad4e; background: #fff8e5; color: #6a4d14; border-radius: 8px; margin: 12px 0;">Unable to load layout section: ${targetId}</div>`;
+        return { targetId, status: 'rejected', error };
       }
+    }
 
-      container.innerHTML = `
-        <div class="layout-error" style="padding: 18px; border: 1px solid #f0ad4e; background: #fff8e5; color: #6a4d14; border-radius: 8px; margin: 12px 0;">
-          Unable to load layout section: ${targetId}
+    async function loadPage(pageName) {
+      const pageContent = document.getElementById('pageContent');
+      if (!pageContent) return;
+
+      const pagePath = `pages/${pageName}.html`;
+      pageContent.innerHTML = `
+        <div class="ds-section">
+          <div class="ds-section-header">
+            <div>
+              <h2 class="ds-section-title">กำลังโหลด...</h2>
+              <p class="ds-section-desc">กำลังดึงหน้า ${pageName} จากโฟลเดอร์ pages</p>
+            </div>
+          </div>
         </div>
       `;
-      return {targetId, status: 'rejected', error: lastError};
+
+      try {
+        const response = await fetch(pagePath);
+        if (!response.ok) throw new Error(`Page not found: ${pagePath}`);
+
+        const html = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+
+        const titleTag = doc.querySelector('title');
+        if (titleTag) {
+          document.title = titleTag.textContent;
+        }
+
+        const main = doc.querySelector('main.ds-main') || doc.body;
+        pageContent.innerHTML = main ? main.innerHTML : doc.body.innerHTML;
+        pageContent.querySelectorAll('script').forEach(script => script.remove());
+        executePageScripts(doc);
+        bindNavLinks();
+        updateActiveNav(pageName);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } catch (error) {
+        console.error(error);
+        pageContent.innerHTML = `
+          <div class="ds-section">
+            <div class="ds-section-header">
+              <div>
+                <h2 class="ds-section-title">ไม่พบหน้าที่ร้องขอ</h2>
+                <p class="ds-section-desc">ไม่สามารถโหลดหน้า <strong>${pageName}</strong> จากโฟลเดอร์ pages ได้</p>
+              </div>
+            </div>
+          </div>
+        `;
+      }
     }
-    /*
-    function loadLayoutFragments() {
-      return Promise.allSettled([
-        loadLayoutFragment('header-placeholder', 'src/components/layout/header.html'),
-        loadLayoutFragment('sidebar-placeholder', 'src/components/layout/sidebar.html'),
-        loadLayoutFragment('footer-placeholder', 'src/components/layout/footer.html')
-      ]);
-    }
- */
+
+    async function loadLayoutFragments() {
+  return [];
+}
+
     function initializeLayout() {
       const savedTheme = localStorage.getItem('theme') || 'light';
       document.documentElement.setAttribute('data-theme', savedTheme);
       updateThemeIcon(savedTheme);
       bindNavLinks();
-      updateActiveNav();
+      updateActiveNav(getPageFromHash());
     }
 
-    // ========================================
-   /* --- คอมเมนต์โค้ดส่วนเก่าเก็บไว้ เผื่ออนาคตอยากใช้ระบบแยกไฟล์ ---
-document.addEventListener('DOMContentLoaded', () => {
-  if (window.location.protocol === 'file:') {
-    console.warn('Local file protocol detected. Use a local HTTP server to load HTML fragments reliably.');
-  }
-  
-  loadLayoutFragments()
-    .then(results => {
-      const failures = results.filter(result => result.status === 'rejected');
-      if (failures.length > 0) {
-        console.warn('Some layout fragments failed to load:', failures);
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.location.protocol === 'file:') {
+        console.warn('Local file protocol detected. Use a local HTTP server to load HTML fragments reliably.');
       }
-      initializeLayout();
-    })
-    .catch(error => {
-      console.error('Unexpected layout initialization error:', error);
-      initializeLayout();
+
+      loadLayoutFragments()
+        .then(results => {
+          const failures = results.filter(result => result.status === 'rejected');
+          if (failures.length > 0) {
+            console.warn('Some layout fragments failed to load:', failures);
+          }
+          initializeLayout();
+          bindNavLinks();
+          loadPage(getPageFromHash());
+        })
+        .catch(error => {
+          console.error('Unexpected layout initialization error:', error);
+          initializeLayout();
+          loadPage(getPageFromHash());
+        });
     });
-});
--------------------------------------------------------------- */
 
+    window.addEventListener('hashchange', () => {
+      loadPage(getPageFromHash());
+    });
 
-// --- โค้ดส่วนใหม่ที่ใช้งานจริง (รันแค่ระบบการทำงานหลัก) ---
-document.addEventListener('DOMContentLoaded', () => {
-    initializeLayout();
-});
+//=========================================
+// หุบsidebarสำหรับมือถือ ไอแพด
+//========================================= 
+function toggleSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('sidebarOverlay');
 
+  sidebar.classList.toggle('active');
+  overlay.classList.toggle('active');
+}
 
+function closeSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('sidebarOverlay');
+  
+  // ปิดเมนู[cite: 5]
+  sidebar.classList.remove('active');
+  overlay.classList.remove('active');
+}

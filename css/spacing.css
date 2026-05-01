@@ -1,0 +1,146 @@
+/* ========================================
+   SHADOWS & SPACING UTILITIES
+   ======================================== */
+
+/* ========================================
+   DIVIDER WITH TEXT
+   ======================================== */
+.divider-fancy {
+  display: flex;
+  align-items: center;
+  margin: 32px 0;
+}
+
+.divider-fancy::before,
+.divider-fancy::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border-color), transparent);
+}
+
+.divider-fancy-text {
+  padding: 0 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ========================================
+   STATUS INDICATORS
+   ======================================== */
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.status-dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  opacity: 0;
+  animation: pulse-status 2s infinite;
+}
+
+.status-icon {
+  font-size: 10px;
+}
+
+.status-icon.success { color: var(--success-500); }
+.status-icon.warning { color: var(--warning-500); }
+.status-icon.error { color: var(--error-500); }
+.status-icon.info { color: var(--info-500); }
+.status-icon.default { color: var(--slate-400); }
+
+/* Status pulse animation for icons */
+.status-icon-pulse {
+  animation: status-pulse 2s infinite;
+}
+
+/* ========================================
+   CHART/GRAPH PLACEHOLDERS
+   ======================================== */
+.chart-placeholder {
+  height: 200px;
+  background: linear-gradient(to top, var(--primary-50) 0%, var(--primary-100) 100%);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.chart-placeholder::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background: linear-gradient(to top, var(--primary-200), transparent);
+  clip-path: polygon(0 100%, 20% 60%, 40% 80%, 60% 40%, 80% 70%, 100% 30%, 100% 100%);
+}
+
+/* ========================================
+   SEARCH HIGHLIGHT
+   ======================================== */
+.highlight {
+  background: yellow;
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+/* ========================================
+   LOADING SKELETON DEMO
+   ======================================== */
+.skeleton-demo-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* ========================================
+   TOOLTIP DEMO
+   ======================================== */
+.tooltip-demo {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+@media print {
+  .ds-header,
+  .ds-sidebar,
+  .ds-component-code,
+  .btn-copy,
+  .scroll-top,
+  .fab {
+    display: none !important;
+  }
+  
+  .ds-main {
+    margin-left: 0;
+    max-width: 100%;
+  }
+  
+  .ds-component {
+    break-inside: avoid;
+  }
+}

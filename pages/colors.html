@@ -20,236 +20,14 @@
   <link rel="stylesheet" href="../css/index-custom.css">
 </head>
 <body>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  
   <!-- Toast Container -->
   <div class="toast-container" id="toastContainer"></div>
 
   <!-- Sidebar Overlay -->
   <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
 
-  <!-- Header -->
-  <header class="ds-header">
-    <div class="ds-header-logo">
-      <div class="ds-header-brand">
-        <img src="../image/A1.png" alt="SUTH DS Logo">
-      </div>
-      <div>
-        <div class="ds-header-title-wrapper">
-          <div class="ds-header-title-main">Design system</div>
-          <div class="ds-header-title-sub">by IT SUTH<span class="ds-header-version">v2.0.0</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="ds-header-actions">
-      <!-- Font Selector -->
-      <div class="font-selector">
-        <label>Font</label>
-        <select id="fontSelect" onchange="changeFont(this.value)">
-          <option value="anuphan">Anuphan</option>
-          <option value="sut">SUT (Local)</option>
-        </select>
-      </div>
-
-      <!-- Theme Toggle -->
-      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme" id="themeToggleBtn">
-        <svg id="themeIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-      </button>
-
-      <!-- GitHub Link -->
-      <a href="#" class="github-link" title="View on GitHub">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-        <span>GitHub</span>
-      </a>
-
-      <!-- Mobile Menu Toggle -->
-      <button class="mobile-menu-toggle" onclick="toggleSidebar()" aria-label="Toggle menu">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      </button>
-    </div>
-  </header>
-
-  <!-- Layout -->
-  <div class="ds-layout">
-    <!-- Sidebar -->
-    <aside class="ds-sidebar" id="sidebar">
-      <!-- Search -->
-      <div class="sidebar-search">
-        <div class="sidebar-search-wrapper">
-          <svg class="sidebar-search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%);"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          <input type="text" class="sidebar-search-input" placeholder="Search components..." id="sidebarSearch" onkeyup="searchComponents()" style="padding-left: 40px;">
-        </div>
-      </div>
-
-      <!-- Navigation -->
-      <nav class="ds-nav-section">
-        <div class="ds-nav-title"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg> Getting Started</div>
-        <ul class="ds-nav-list" id="navList">
-          <li>
-            <a href="introduction.html" class="ds-nav-link" data-section="introduction">
-              <svg class="ds-nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-              Introduction
-            </a>
-          </li>
-          <li>
-            <a href="installation.html" class="ds-nav-link" data-section="installation">
-              <svg class="ds-nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Installation
-            </a>
-          </li>
-        </ul>
-      </nav>
-
-      <nav class="ds-nav-section">
-        <div class="ds-nav-title"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg> Foundation</div>
-        <ul class="ds-nav-list">
-          <li>
-            <a href="sut-font.html" class="ds-nav-link" data-section="sut-font">
-              <svg class="ds-nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
-              SUT Font
-            </a>
-          </li>
-          <li>
-            <a href="typography.html" class="ds-nav-link" data-section="typography">
-              <svg class="ds-nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
-              Typography
-            </a>
-          </li>
-          <li>
-            <a href="colors.html" class="ds-nav-link active" data-section="colors">
-              <svg class="ds-nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
-              Colors
-            </a>
-          </li>
-          <li>
-            <a href="design-tokens.html" class="ds-nav-link" data-section="design-tokens">
-              <svg class="ds-nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 6v6"/><path d="M21 12h-6m-6 0H3"/><path d="m19.07 4.93-4.24 4.24M9.17 14.83l-4.24 4.24M19.07 19.07l-4.24-4.24M9.17 9.17 4.93 4.93"/></svg>
-              Design Tokens
-            </a>
-          </li>
-        </ul>
-      </nav>
-
-      <nav class="ds-nav-section">
-        <div class="ds-nav-title"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19.439 7.85c-.049.322.059.648.289.878l1.568 1.568c.47.47.706 1.087.706 1.704s-.235 1.233-.706 1.704l-1.611 1.611a.98.98 0 0 1-.837.276c-.47-.07-.802-.48-.968-.925a2.501 2.501 0 1 0-3.214 3.214c.446.166.855.497.925.968a.979.979 0 0 1-.276.837l-1.61 1.61a2.404 2.404 0 0 1-1.705.707 2.402 2.402 0 0 1-1.704-.706l-1.568-1.568a1.026 1.026 0 0 0-.877-.29c-.493.074-.84.504-1.02.968a2.5 2.5 0 1 1-3.237-3.237c.464-.18.894-.527.967-1.02a1.026 1.026 0 0 0-.289-.877l-1.568-1.568A2.402 2.402 0 0 1 1.998 12c0-.617.236-1.234.706-1.704L4.315 8.685a.98.98 0 0 1 .837-.276c.47.07.802.48.968.925a2.501 2.501 0 1 0 3.214-3.214c-.446-.166-.855-.497-.925-.968a.979.979 0 0 1 .276-.837l1.61-1.61a2.404 2.404 0 0 1 1.705-.707c.617 0 1.234.236 1.704.706l1.568 1.568c.23.23.556.338.877.29.493-.074.84-.504 1.02-.968a2.5 2.5 0 1 1 3.237 3.237c-.464.18-.894.527-.967 1.02z"/></svg> Components</div>
-        <ul class="ds-nav-list">
-          <li>
-            <a href="buttons.html" class="ds-nav-link" data-section="buttons">
-              <svg class="ds-nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 7h10"/></svg>
-              Buttons
-            </a>
-          </li>
-          <li>
-            <a href="forms.html" class="ds-nav-link" data-section="forms">
-              <svg class="ds-nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 7h10"/><path d="M7 12h10"/><path d="M7 17h10"/></svg>
-              Forms
-            </a>
-          </li>
-          <li>
-            <a href="tables.html" class="ds-nav-link" data-section="tables">
-              <svg class="ds-nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
-              Tables
-            </a>
-          </li>
-          <li>
-            <a href="cards.html" class="ds-nav-link" data-section="cards">
-              <svg class="ds-nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01"/><path d="M10 8h8"/><path d="M6 12h.01"/><path d="M10 12h8"/><path d="M6 16h.01"/><path d="M10 16h8"/></svg>
-              Cards
-            </a>
-          </li>
-          <li>
-            <a href="badges.html" class="ds-nav-link" data-section="badges">
-              <svg class="ds-nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
-              Badges
-            </a>
-          </li>
-          <li>
-            <a href="alerts.html" class="ds-nav-link" data-section="alerts">
-              <svg class="ds-nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-              Alerts
-            </a>
-          </li>
-          <li>
-            <a href="modals.html" class="ds-nav-link" data-section="modals">
-              <svg class="ds-nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-              Modals
-            </a>
-          </li>
-          <li>
-            <a href="tabs.html" class="ds-nav-link" data-section="tabs">
-              <svg class="ds-nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-              Tabs
-            </a>
-          </li>
-          <li>
-            <a href="navigation.html" class="ds-nav-link" data-section="navigation">
-              <svg class="ds-nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
-              Navigation
-            </a>
-          </li>
-          <li>
-            <a href="pagination.html" class="ds-nav-link" data-section="pagination">
-              <svg class="ds-nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="11 17 6 12 11 7"/><polyline points="18 17 13 12 18 7"/></svg>
-              Pagination
-            </a>
-          </li>
-          <li>
-            <a href="progress.html" class="ds-nav-link" data-section="progress">
-              <svg class="ds-nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
-              Progress
-            </a>
-          </li>
-          <li>
-            <a href="accordion.html" class="ds-nav-link" data-section="accordion">
-              <svg class="ds-nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-              Accordion
-            </a>
-          </li>
-          <li>
-            <a href="avatar.html" class="ds-nav-link" data-section="avatar">
-              <svg class="ds-nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
-              Avatar
-            </a>
-          </li>
-          <li>
-            <a href="timeline.html" class="ds-nav-link" data-section="timeline">
-              <svg class="ds-nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><circle cx="12" cy="6" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="18" r="2"/></svg>
-              Timeline
-            </a>
-          </li>
-        </ul>
-      </nav>
-
-      <nav class="ds-nav-section">
-        <div class="ds-nav-title"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> Utilities</div>
-        <ul class="ds-nav-list">
-          <li>
-            <a href="spacing.html" class="ds-nav-link" data-section="spacing">
-              <svg class="ds-nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8l4 4-4 4"/><path d="M3 12h18"/><path d="M7 8l-4 4 4 4"/></svg>
-              Spacing
-            </a>
-          </li>
-          <li>
-            <a href="grid.html" class="ds-nav-link" data-section="grid">
-              <svg class="ds-nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-              Grid
-            </a>
-          </li>
-          <li>
-            <a href="flexbox.html" class="ds-nav-link" data-section="flexbox">
-              <svg class="ds-nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-              Flexbox
-            </a>
-          </li>
-          <li>
-            <a href="crud-utils.html" class="ds-nav-link" data-section="crud-utils">
-              <svg class="ds-nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-              CRUD Utils
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </aside>
+ 
 
     <!-- Main Content -->
     <main class="ds-main">
@@ -459,50 +237,21 @@
         </div>
       </section>
 
+      <!-- Footer -->
+      <div class="divider-fancy">
+        <span class="divider-fancy-text">SUTH Design System v2.0.0</span>
+      </div>
+      
+      <footer style="text-align: center; padding: 40px 0; color: var(--text-muted);">
+        <p style="margin-bottom: 8px;">© 2024 Suranaree University of Technology Hospital</p>
+        <p style="font-size: 0.8125rem;">Built with care for healthcare professionals</p>
+      </footer>
+
+
     </main>
   </div>
 
-  <!-- Footer -->
-  <footer class="ds-footer">
-    <div class="ds-footer-content">
-      <div class="ds-footer-section">
-        <div class="ds-footer-brand">
-          <img src="../image/A1.png" alt="SUTH DS Logo" style="height: 32px;">
-          <div>
-            <div class="ds-footer-title">SUTH Design System</div>
-            <div class="ds-footer-subtitle">by IT SUTH</div>
-          </div>
-        </div>
-        <p class="ds-footer-desc">Professional UI components for healthcare applications at Suranaree University of Technology Hospital.</p>
-      </div>
-      <div class="ds-footer-section">
-        <h4 class="ds-footer-heading">Resources</h4>
-        <ul class="ds-footer-links">
-          <li><a href="introduction.html">Introduction</a></li>
-          <li><a href="installation.html">Installation</a></li>
-          <li><a href="buttons.html">Components</a></li>
-          <li><a href="../icons.html" target="_blank">Icons</a></li>
-        </ul>
-      </div>
-      <div class="ds-footer-section">
-        <h4 class="ds-footer-heading">Community</h4>
-        <ul class="ds-footer-links">
-          <li><a href="#" target="_blank">GitHub</a></li>
-          <li><a href="#" target="_blank">Issues</a></li>
-          <li><a href="#" target="_blank">Discussions</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="ds-footer-bottom">
-      <p>&copy; 2024 Suranaree University of Technology Hospital. All rights reserved.</p>
-    </div>
-  </footer>
 
-  <!-- Scripts -->
-  <script src="../js/bootstrap.bundle.min.js"></script>
-  <script src="../suth-ds.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-  <script src="../js/index-custom.js"></script>
+  
 </body>
 </html>

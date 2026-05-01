@@ -1,0 +1,62 @@
+/* ========================================
+   INTERACTIVE DEMO ELEMENTS
+   ======================================== */
+.demo-tabs .tab-btn {
+  position: relative;
+}
+
+.demo-tabs .tab-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 60%;
+  height: 2px;
+  background: var(--primary-600);
+  transition: transform 0.3s;
+}
+
+.demo-tabs .tab-btn:hover::after {
+  transform: translateX(-50%) scaleX(0.5);
+}
+
+/* Live Form Validation Demo */
+.form-live-demo .form-input:focus {
+  animation: pulse-border 2s infinite;
+}
+
+@keyframes pulse-border {
+  0%, 100% { box-shadow: 0 0 0 3px var(--primary-100); }
+  50% { box-shadow: 0 0 0 6px var(--primary-50); }
+}
+
+/* Button Press Effect */
+.btn-press-effect:active {
+  transform: scale(0.96);
+}
+
+/* Button Elevate Effect */
+.btn-elevate {
+  transition: all 0.2s ease;
+}
+.btn-elevate:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+.btn-elevate:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.3);
+}
+
+/* Animated Progress */
+.progress-animated .progress-bar {
+  background: linear-gradient(90deg, var(--primary-600) 0%, var(--primary-400) 50%, var(--primary-600) 100%);
+  background-size: 200% 100%;
+  animation: shimmer-progress 2s infinite;
+}
+
+@keyframes shimmer-progress {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
