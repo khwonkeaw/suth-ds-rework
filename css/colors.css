@@ -84,3 +84,128 @@
 .color-item.copied .color-copied {
   opacity: 1;
 }
+
+/* Base Color Palette */
+.palette-vertical {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+.palette-vertical-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 280px));
+  justify-content: center;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.palette-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 280px;
+}
+
+/* หัวชื่อสี */
+.palette-title {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 12px;
+  text-align: center;
+  color: #0f172a;
+  letter-spacing: 0.3px;
+}
+
+
+/* สีแต่ละแถว */
+.color-strip {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  font-size: 13px;
+  font-family: 'JetBrains Mono', monospace;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.color-strip:last-child {
+  border-bottom: none;
+}
+
+.color-strip:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 2;
+}
+
+/* text */
+.strip-left { color: rgba(0,0,0,0.75); }
+.strip-right { color: rgba(0,0,0,0.6); font-size: 12px; }
+
+/* สีเข้ม */
+.color-strip:nth-child(n+7) .strip-left,
+.color-strip:nth-child(n+7) .strip-right {
+  color: #fff;
+}
+
+/* hover label */
+.strip-copy {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 11px;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 999px;
+  opacity: 0;
+  transition: 0.2s;
+  pointer-events: none;
+}
+
+.color-strip:hover .strip-copy {
+  opacity: 1;
+}
+
+.color-strip.copied .strip-copy {
+  opacity: 1;
+  background: #16a34a;
+}
+
+
+/* เฉพาะการ์ด Base Color Palettes */
+.palette-section {
+  padding: 0;
+}
+
+/* ดัน palette ลงจาก header */
+.palette-section .palette-vertical-wrapper {
+  margin-top: 16px;
+}
+
+/* เพิ่มช่องไฟล่าง */
+.palette-section .palette-vertical-wrapper {
+  margin-bottom: 8px;
+}
+
+/* เพิ่มระยะระหว่าง 3 การ์ด */
+.palette-section .palette-vertical-wrapper {
+  gap: 20px;
+}
+

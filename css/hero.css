@@ -2,7 +2,7 @@
    HERO SECTION
    ======================================== */
 .ds-hero {
-  background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 50%, var(--suth-green) 100%);
+  background: linear-gradient(135deg, #f47932 0%, #e06825 50%, #ffedd5 100%) !important;
   border-radius: var(--radius-2xl);
   padding: 48px;
   margin-bottom: 48px;
@@ -81,13 +81,15 @@
 
 .ds-hero-btn-primary {
   background: white;
-  color: var(--primary-700);
+  color: #e06825 !important;
   box-shadow: 0 4px 14px rgba(0,0,0,0.15);
 }
 
 .ds-hero-btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
 }
 
 .ds-hero-btn-secondary {
@@ -170,7 +172,7 @@
   content: '';
   width: 4px;
   height: 28px;
-  background: linear-gradient(to bottom, var(--primary-600), var(--primary-400));
+ background: linear-gradient(to bottom, #f47932, #fbba74) ;
   border-radius: 2px;
 }
 
@@ -196,12 +198,12 @@
   align-items: center;
   gap: 6px;
   padding: 6px 14px;
-  background: linear-gradient(135deg, var(--primary-50) 0%, #dbeafe 100%);
-  color: var(--primary-700);
+  background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%) !important;
+  color: #c2410c !important;
+  border: 1px solid #fed7aa !important;
   border-radius: var(--radius-full);
   font-size: 0.75rem;
   font-weight: 600;
-  border: 1px solid var(--primary-100);
 }
 
 [data-theme="dark"] .ds-section-badge {
