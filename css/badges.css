@@ -70,3 +70,135 @@
   0% { transform: scale(0.8); opacity: 0; }
   100% { transform: scale(1); opacity: 1; }
 }
+
+.badge-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.avatar-placeholder {
+  width: 42px;
+  height: 42px;
+  background-color: #d9d9d9;
+  border-radius: 8px; 
+}
+
+.count-tag {
+  position: absolute;
+  top: -8px; 
+  right: -12px; 
+  background-color: #ff4d4f !important; 
+  color: white;
+  font-size: 11px;
+  font-weight: 500;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px !important;
+  border-radius: 10px !important; 
+  border: 1px solid #ffffff; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 1px #fff; 
+}
+/* Ant Design Switch Style */
+.ant-switch {
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.88);
+  font-size: 14px;
+  line-height: 22px;
+  list-style: none;
+  position: relative;
+  display: inline-block;
+  min-width: 44px;
+  height: 22px;
+  vertical-align: middle;
+  background: rgba(0, 0, 0, 0.25);
+  border: 0;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ant-switch-checked {
+  background: #1677ff; /* สีฟ้าตอนเปิด */
+}
+
+.ant-switch-handle {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  transition: all 0.2s ease-in-out;
+}
+
+.ant-switch-handle::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: #fff;
+  border-radius: 9px;
+  box-shadow: 0 2px 4px rgba(0, 35, 11, 0.2);
+}
+
+.ant-switch-checked .ant-switch-handle {
+  left: calc(100% - 20px);
+}
+
+.standalone-badge {
+  color: white !important;
+  font-size: 12px !important;
+  font-weight: 500;
+  height: 20px;
+  min-width: 20px;
+  padding: 0 8px !important;
+  border-radius: 10px !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none !important;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+.status-success { background-color: #52c41a; }
+.status-error { background-color: #ff4d4f; }
+.status-default { background-color: rgba(0, 0, 0, 0.25); }
+.status-warning { background-color: #faad14; }
+.status-processing, .status-processing-static { background-color: #1677ff; }
+
+
+.status-processing::after {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #1677ff;
+  border-radius: 50%;
+  content: "";
+  animation: statusProcessingAni 1.2s infinite ease-in-out;
+  box-sizing: content-box;
+}
+
+@keyframes statusProcessingAni {
+  0% { transform: scale(0.8); opacity: 0.5; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+.status-item {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #333;
+}

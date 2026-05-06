@@ -1,0 +1,182 @@
+/* Avatar page specific styles */
+#avatar .avatar-sizes-row {
+  align-items: center;
+}
+
+#avatar .avatar-size-item {
+  text-align: center;
+}
+
+#avatar .avatar-size-item .text-xs {
+  margin-top: 8px;
+}
+
+#avatar .avatar-group-preview {
+  gap: 32px;
+}
+
+#avatar .avatar-section-label {
+  margin-bottom: 12px;
+}
+
+#avatar .avatar-status-section {
+  gap: 20px;
+}
+
+#avatar .avatar-status-icons-row,
+#avatar .avatar-badge-row,
+#avatar .avatar-dot-row {
+  gap: 24px;
+}
+
+.avatar-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dot.success {
+  background: var(--success-500);
+}
+
+.status-dot.warning {
+  background: var(--warning-500);
+}
+
+.status-dot.error {
+  background: var(--error-500);
+}
+
+.status-dot.offline {
+  background: var(--slate-400);
+}
+
+.avatar-bg-success {
+  background: var(--success-600);
+}
+
+.avatar-bg-warning {
+  background: var(--warning-500);
+}
+
+.avatar-bg-error {
+  background: var(--error-500);
+}
+
+.avatar-footer {
+  text-align: center;
+  padding: 40px 0;
+  color: var(--text-muted);
+}
+
+.avatar-footer p:first-child {
+  margin-bottom: 8px;
+}
+
+.avatar-footer p:last-child {
+  font-size: 0.8125rem;
+}
+
+/* ========================================
+   AVATAR COMPONENT
+======================================== */
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: white;
+  background: var(--primary-600);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-xs {
+  width: 24px;
+  height: 24px;
+  font-size: 0.625rem;
+}
+
+.avatar-sm {
+  width: 32px;
+  height: 32px;
+  font-size: 0.75rem;
+}
+
+.avatar-lg {
+  width: 48px;
+  height: 48px;
+  font-size: 1rem;
+}
+
+.avatar-xl {
+  width: 64px;
+  height: 64px;
+  font-size: 1.25rem;
+}
+
+.avatar-group {
+  display: flex;
+}
+
+.avatar-group .avatar {
+  border: 2px solid var(--bg-primary);
+  margin-left: -8px;
+}
+
+.avatar-group .avatar:first-child {
+  margin-left: 0;
+}
+
+.avatar-status {
+  position: relative;
+}
+
+.avatar-status::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  background: var(--success-500);
+  border: 2px solid var(--bg-primary);
+  border-radius: 50%;
+}
+
+.avatar-status.away::after {
+  background: var(--warning-500);
+}
+
+.avatar-status.busy::after {
+  background: var(--error-500);
+}
+
+.avatar-status.offline::after {
+  background: var(--slate-400);
+}
+
+/* Dark mode styles for avatar */
+[data-theme="dark"] .avatar-group .avatar {
+  border-color: var(--slate-800);
+}
+
+[data-theme="dark"] .avatar-status::after {
+  border-color: var(--slate-800);
+}
