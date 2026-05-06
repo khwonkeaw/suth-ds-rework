@@ -208,4 +208,94 @@
 .palette-section .palette-vertical-wrapper {
   gap: 20px;
 }
+/* ========================================
+   COLOR GRID (CLEAN)
+   ======================================== */
+
+#colors .color-grid {
+  display: flex !important;
+  gap: 0 !important;  
+  border-radius: 0 !important;
+  overflow: hidden;    
+}
+
+/* แต่ละช่อง */
+#colors .color-item {
+  flex: 1;
+  position: relative;
+  cursor: pointer;
+  border: none !important;
+  background: none;
+  border-radius: 0 !important; 
+}
+
+/* สี */
+#colors .color-preview {
+  height: 90px;
+}
+
+/* container text */
+#colors .color-info {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ชื่อ */
+#colors .color-name {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* hex */
+#colors .color-value {
+  font-size: 12px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* text สี */
+#colors .color-name,
+#colors .color-value {
+  color: #fff;
+}
+
+/* สีอ่อน → ดำ */
+#colors .color-item:nth-child(-n+4) .color-name,
+#colors .color-item:nth-child(-n+4) .color-value {
+  color: #111;
+}
+
+/* ✅ เว้นระยะเฉพาะ Semantic */
+.ds-component-preview > .color-grid + .color-grid {
+  margin-top: 16px;
+}
+
+/* ซ่อนชื่อ + hex ตอน hover (เฉพาะ Semantic) */
+.ds-component-preview .color-item:hover .color-info {
+  opacity: 0;
+}
+
+/* ทำให้ overlay อยู่บนสุด */
+.ds-component-preview .color-preview::after {
+  z-index: 2;
+}
+
+/* กัน text โผล่ซ้อน */
+.ds-component-preview .color-info {
+  z-index: 1;
+  transition: opacity 0.2s;
+}
+
+.text-dark .color-name,
+.text-dark .color-value {
+  color: #111 !important;
+}
+
+.text-white .color-name,
+.text-white .color-value {
+  color: #fff !important;
+}
 

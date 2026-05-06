@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#2563EB">
   <title>SUTH Design System v2.0.0 - Alerts</title>
-  <meta name="description" content="SUTH Design System v2.0.0 - Contextual feedback messages for user actions and system states">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <meta name="description"
+    content="SUTH Design System v2.0.0 - Contextual feedback messages for user actions and system states">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
 
   <!-- Design System CSS -->
   <link rel="stylesheet" href="../suth-ds.min.css">
@@ -19,155 +24,486 @@
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="../css/index-custom.css">
 </head>
+
 <body>
-  
+
   <!-- Toast Container -->
   <div class="toast-container" id="toastContainer"></div>
 
   <!-- Sidebar Overlay -->
   <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
 
- 
+  <!-- Main Content -->
+  <main class="ds-main">
 
-    <!-- Main Content -->
-    <main class="ds-main">
-
-      <!-- Alerts -->
-      <section class="ds-section" id="alerts">
-        <div class="ds-section-header">
-          <div>
-            <h2 class="ds-section-title">Alerts</h2>
-            <p class="ds-section-desc">Contextual feedback messages for user actions and system states.</p>
-          </div>
-          <span class="ds-section-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-            Dismissible
-          </span>
+    <!-- Alerts Section -->
+    <section class="ds-section" id="alerts">
+      <div class="ds-section-header">
+        <div>
+          <h2 class="ds-section-title">Alerts</h2>
+          <p class="ds-section-desc">Contextual feedback messages for user actions and system states.</p>
         </div>
-        
-        <div class="ds-component">
-          <div class="ds-component-header">
-            <span class="ds-component-title">Basic Bootstrap Alerts</span>
-          </div>
-          <div class="ds-component-preview">
-            <div class="preview-stack" style="max-width: 700px; display: flex; flex-direction: column; gap: 16px;">
-              
-              <!-- Success Alert -->
-              <div class="alert alert-success m-0" role="alert" style="color: #0f5132; background-color: #d1e7dd; border-color: #badbcc;">
-                Success Text
-              </div>
+        <span class="ds-section-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
+            <line x1="12" y1="9" x2="12" y2="13" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
+          Dismissible
+        </span>
+      </div>
 
-              <!-- Info Alert -->
-              <div class="alert alert-info m-0" role="alert" style="color: #055160; background-color: #cff4fc; border-color: #b6effb;">
-                Info Text
-              </div>
+      <!-- ========================================== -->
+      <!-- CSS OVERRIDE FOR ANT DESIGN STYLE -->
+      <!-- ========================================== -->
+      <style>
+        /* Base Text Colors */
+        .alert {
+          color: rgba(0, 0, 0, 0.88) !important;
+          border-width: 1px !important;
+          border-style: solid !important;
+        }
 
-              <!-- Warning Alert -->
-              <div class="alert alert-warning m-0" role="alert" style="color: #664d03; background-color: #fff3cd; border-color: #ffecb5;">
-                Warning Text
-              </div>
+        .alert-title {
+          color: rgba(0, 0, 0, 0.88) !important;
+        }
 
-              <!-- Error (Danger) Alert -->
-              <div class="alert alert-danger m-0" role="alert" style="color: #842029; background-color: #f8d7da; border-color: #f5c2c7;">
-                Error Text
-              </div>
+        .alert-close {
+          color: rgba(0, 0, 0, 0.45) !important;
+        }
 
-            </div>
+        .alert-close:hover {
+          color: rgba(0, 0, 0, 0.88) !important;
+        }
+
+        /* Success */
+        .alert-success {
+          background-color: #f6ffed !important;
+          border-color: #b7eb8f !important;
+        }
+
+        .alert-success .alert-icon {
+          color: #52c41a !important;
+        }
+
+        /* Info */
+        .alert-info {
+          background-color: #e6f4ff !important;
+          border-color: #91caff !important;
+        }
+
+        .alert-info .alert-icon {
+          color: #1677ff !important;
+        }
+
+        /* Warning */
+        .alert-warning {
+          background-color: #fffbe6 !important;
+          border-color: #ffe58f !important;
+        }
+
+        .alert-warning .alert-icon {
+          color: #faad14 !important;
+        }
+
+        /* Error */
+        .alert-error {
+          background-color: #fff2f0 !important;
+          border-color: #ffccc7 !important;
+        }
+
+        .alert-error .alert-icon {
+          color: #ff4d4f !important;
+        }
+
+        /* Banner Alignment Overrides */
+        .alert.rounded-none {
+          border-radius: 0 !important;
+          border: none !important;
+          display: flex !important;
+          align-items: center !important;
+          padding: 9px 16px !important;
+        }
+
+        .alert.rounded-none .alert-icon {
+          width: 16px !important;
+          height: 16px !important;
+          margin-top: 0 !important;
+          margin-right: 8px !important;
+          flex-shrink: 0 !important;
+        }
+
+        .alert.rounded-none .alert-content {
+          font-size: 14px !important;
+          margin: 0 !important;
+        }
+      </style>
+
+      <!-- ========================================== -->
+      <!-- Basic Alerts -->
+      <!-- ========================================== -->
+      <div class="ds-component">
+        <div class="ds-component-header">
+          <span class="ds-component-title">Basic Alerts</span>
+          <button class="btn-copy" onclick="copyCode('basic-alerts')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+            Copy
+          </button>
+        </div>
+        <div class="ds-component-preview">
+          <div class="preview-stack" style="max-width: 700px; display: flex; flex-direction: column; gap: 16px;">
+            <div class="alert alert-success" role="alert">Success Text</div>
+            <div class="alert alert-info" role="alert">Info Text</div>
+            <div class="alert alert-warning" role="alert">Warning Text</div>
+            <div class="alert alert-error" role="alert">Error Text</div>
           </div>
         </div>
-        
-        <div class="ds-component">
-          <div class="ds-component-header">
-            <span class="ds-component-title">Alert Variants</span>
-            <button class="btn-copy" onclick="copyCode('alert-variants')">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-              Copy
-            </button>
+        <div class="ds-component-code">
+          <div class="ds-component-code-header">
+            <span class="ds-component-code-lang">HTML</span>
           </div>
-          <div class="ds-component-preview">
-            <div class="preview-stack" style="max-width: 700px;">
-              <div class="alert alert-success" id="alertSuccess">
-                <svg class="alert-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                <div class="alert-content">
-                  <div class="alert-title">Success!</div>
-                  Patient record has been updated successfully.
-                </div>
-                <button class="alert-close" onclick="dismissAlert('alertSuccess')">×</button>
-              </div>
-              
-              <div class="alert alert-warning" id="alertWarning">
-                <svg class="alert-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                <div class="alert-content">
-                  <div class="alert-title">Warning</div>
-                  Appointment time conflicts with another booking. Please review.
-                </div>
-                <button class="alert-close" onclick="dismissAlert('alertWarning')">×</button>
-              </div>
-              
-              <div class="alert alert-error" id="alertError">
-                <svg class="alert-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                <div class="alert-content">
-                  <div class="alert-title">Error</div>
-                  Failed to save changes. Please check your connection and try again.
-                </div>
-                <button class="alert-close" onclick="dismissAlert('alertError')">×</button>
-              </div>
-              
-              <div class="alert alert-info" id="alertInfo">
-                <svg class="alert-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-                <div class="alert-content">
-                  <div class="alert-title">Information</div>
-                  New system update scheduled for tonight at 2:00 AM. Duration: ~30 minutes.
-                </div>
-                <button class="alert-close" onclick="dismissAlert('alertInfo')">×</button>
-              </div>
+          <pre
+            id="basic-alerts"><code><span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"alert alert-success"</span> <span class="token-attr">role</span>=<span class="token-value">"alert"</span><span class="token-tag">&gt;</span>Success Text<span class="token-tag">&lt;/div&gt;</span>
+<span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"alert alert-info"</span> <span class="token-attr">role</span>=<span class="token-value">"alert"</span><span class="token-tag">&gt;</span>Info Text<span class="token-tag">&lt;/div&gt;</span>
+<span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"alert alert-warning"</span> <span class="token-attr">role</span>=<span class="token-value">"alert"</span><span class="token-tag">&gt;</span>Warning Text<span class="token-tag">&lt;/div&gt;</span>
+<span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"alert alert-error"</span> <span class="token-attr">role</span>=<span class="token-value">"alert"</span><span class="token-tag">&gt;</span>Error Text<span class="token-tag">&lt;/div&gt;</span></code></pre>
+        </div>
+      </div>
+
+      <!-- ========================================== -->
+      <!-- Closable Alerts -->
+      <!-- ========================================== -->
+      <div class="ds-component">
+        <div class="ds-component-header">
+          <span class="ds-component-title">Closable Alerts</span>
+          <button class="btn-copy" onclick="copyCode('closable-alerts')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+            Copy
+          </button>
+        </div>
+        <div class="ds-component-preview">
+          <div class="preview-stack" style="max-width: 700px; display: flex; flex-direction: column; gap: 16px;">
+
+            <!-- Warning -->
+            <div class="alert alert-warning" role="alert">
+              <div class="alert-content">Warning Title</div>
+              <button class="alert-close" onclick="this.parentElement.remove()">×</button>
             </div>
+
+            <!-- Success -->
+            <div class="alert alert-success" role="alert">
+              <div class="alert-content">Success Title</div>
+              <button class="alert-close" onclick="this.parentElement.remove()">×</button>
+            </div>
+
+            <!-- Info -->
+            <div class="alert alert-info" role="alert">
+              <div class="alert-content">Info Title</div>
+              <button class="alert-close" onclick="this.parentElement.remove()">×</button>
+            </div>
+
+            <!-- Error -->
+            <div class="alert alert-error" role="alert">
+              <div class="alert-content">Error Title</div>
+              <button class="alert-close" onclick="this.parentElement.remove()">×</button>
+            </div>
+
           </div>
-          <div class="ds-component-code">
-            <div class="ds-component-code-header">
-              <span class="ds-component-code-lang">HTML</span>
+        </div>
+        <div class="ds-component-code">
+          <div class="ds-component-code-header">
+            <span class="ds-component-code-lang">HTML</span>
+          </div>
+          <pre id="closable-alerts"><code><span class="token-comment">&lt;!-- Warning --&gt;</span>
+<span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"alert alert-warning"</span> <span class="token-attr">role</span>=<span class="token-value">"alert"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"alert-content"</span><span class="token-tag">&gt;</span>Warning Title<span class="token-tag">&lt;/div&gt;</span>
+  <span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"alert-close"</span> <span class="token-attr">onclick</span>=<span class="token-value">"this.parentElement.remove()"</span><span class="token-tag">&gt;</span>×<span class="token-tag">&lt;/button&gt;</span>
+<span class="token-tag">&lt;/div&gt;</span>
+
+<span class="token-comment">&lt;!-- Success --&gt;</span>
+<span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"alert alert-success"</span> <span class="token-attr">role</span>=<span class="token-value">"alert"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"alert-content"</span><span class="token-tag">&gt;</span>Success Title<span class="token-tag">&lt;/div&gt;</span>
+  <span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"alert-close"</span> <span class="token-attr">onclick</span>=<span class="token-value">"this.parentElement.remove()"</span><span class="token-tag">&gt;</span>×<span class="token-tag">&lt;/button&gt;</span>
+<span class="token-tag">&lt;/div&gt;</span>
+
+<span class="token-comment">&lt;!-- Info --&gt;</span>
+<span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"alert alert-info"</span> <span class="token-attr">role</span>=<span class="token-value">"alert"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"alert-content"</span><span class="token-tag">&gt;</span>Info Title<span class="token-tag">&lt;/div&gt;</span>
+  <span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"alert-close"</span> <span class="token-attr">onclick</span>=<span class="token-value">"this.parentElement.remove()"</span><span class="token-tag">&gt;</span>×<span class="token-tag">&lt;/button&gt;</span>
+<span class="token-tag">&lt;/div&gt;</span>
+
+<span class="token-comment">&lt;!-- Error --&gt;</span>
+<span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"alert alert-error"</span> <span class="token-attr">role</span>=<span class="token-value">"alert"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"alert-content"</span><span class="token-tag">&gt;</span>Error Title<span class="token-tag">&lt;/div&gt;</span>
+  <span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"alert-close"</span> <span class="token-attr">onclick</span>=<span class="token-value">"this.parentElement.remove()"</span><span class="token-tag">&gt;</span>×<span class="token-tag">&lt;/button&gt;</span>
+<span class="token-tag">&lt;/div&gt;</span></code></pre>
+        </div>
+      </div>
+
+      <!-- ========================================== -->
+      <!-- Alert Variants -->
+      <!-- ========================================== -->
+      <div class="ds-component">
+        <div class="ds-component-header">
+          <span class="ds-component-title">Alert Variants</span>
+          <button class="btn-copy" onclick="copyCode('alert-variants')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+            Copy
+          </button>
+        </div>
+        <div class="ds-component-preview">
+          <div class="preview-stack" style="max-width: 700px;">
+
+            <div class="alert alert-success" id="alertSuccess">
+              <svg class="alert-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+              </svg>
+              <div class="alert-content">
+                <div class="alert-title">Success</div>
+                Patient record has been updated successfully.
+              </div>
+              <button class="alert-close" onclick="dismissAlert('alertSuccess')">×</button>
             </div>
-            <pre id="alert-variants"><code><span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"alert alert-success"</span><span class="token-tag">&gt;</span>
-  <span class="token-tag">&lt;svg</span> <span class="token-attr">class</span>=<span class="token-value">"alert-icon"</span><span class="token-tag">&gt;</span>...<span class="token-tag">&lt;/svg&gt;</span>
+
+            <div class="alert alert-warning" id="alertWarning">
+              <svg class="alert-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+              </svg>
+              <div class="alert-content">
+                <div class="alert-title">Warning</div>
+                Appointment time conflicts with another booking. Please review.
+              </div>
+              <button class="alert-close" onclick="dismissAlert('alertWarning')">×</button>
+            </div>
+
+            <div class="alert alert-error" id="alertError">
+              <svg class="alert-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z" />
+              </svg>
+              <div class="alert-content">
+                <div class="alert-title">Error</div>
+                Failed to save changes. Please check your connection and try again.
+              </div>
+              <button class="alert-close" onclick="dismissAlert('alertError')">×</button>
+            </div>
+
+            <div class="alert alert-info" id="alertInfo">
+              <svg class="alert-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+              </svg>
+              <div class="alert-content">
+                <div class="alert-title">Information</div>
+                New system update scheduled for tonight at 2:00 AM. Duration: ~30 minutes.
+              </div>
+              <button class="alert-close" onclick="dismissAlert('alertInfo')">×</button>
+            </div>
+
+          </div>
+        </div>
+        <div class="ds-component-code">
+          <div class="ds-component-code-header">
+            <span class="ds-component-code-lang">HTML</span>
+          </div>
+          <pre id="alert-variants"><code><span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"alert alert-success"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;svg</span> <span class="token-attr">class</span>=<span class="token-value">"alert-icon"</span> <span class="token-attr">viewBox</span>=<span class="token-value">"0 0 24 24"</span> <span class="token-attr">fill</span>=<span class="token-value">"currentColor"</span><span class="token-tag">&gt;</span>...<span class="token-tag">&lt;/svg&gt;</span>
   <span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"alert-content"</span><span class="token-tag">&gt;</span>
-    <span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"alert-title"</span><span class="token-tag">&gt;</span>Success!<span class="token-tag">&lt;/div&gt;</span>
+    <span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"alert-title"</span><span class="token-tag">&gt;</span>Success<span class="token-tag">&lt;/div&gt;</span>
     Your action was completed successfully.
   <span class="token-tag">&lt;/div&gt;</span>
   <span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"alert-close"</span><span class="token-tag">&gt;</span>×<span class="token-tag">&lt;/button&gt;</span>
 <span class="token-tag">&lt;/div&gt;</span></code></pre>
-          </div>
         </div>
-        
-        <div class="ds-component">
-          <div class="ds-component-header">
-            <span class="ds-component-title">Live Alert Demo</span>
-          </div>
-          <div class="ds-component-preview">
-            <div class="preview-row">
-              <button class="btn btn-success" onclick="showLiveAlert('success')">Show Success</button>
-              <button class="btn btn-warning" onclick="showLiveAlert('warning')">Show Warning</button>
-              <button class="btn btn-danger" onclick="showLiveAlert('error')">Show Error</button>
-              <button class="btn btn-info" onclick="showLiveAlert('info')">Show Info</button>
-            </div>
-            <div id="liveAlertContainer" class="preview-stack" style="margin-top: 20px; max-width: 600px;"></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Footer -->
-      <div class="divider-fancy">
-        <span class="divider-fancy-text">SUTH Design System v2.0.0</span>
       </div>
-      
-      <footer style="text-align: center; padding: 40px 0; color: var(--text-muted);">
-        <p style="margin-bottom: 8px;">© 2024 Suranaree University of Technology Hospital</p>
-        <p style="font-size: 0.8125rem;">Built with care for healthcare professionals</p>
-      </footer>
 
-    </main>
-  </div>
+      <!-- ========================================== -->
+      <!-- Live Alert Demo -->
+      <!-- ========================================== -->
+      <div class="ds-component">
+        <div class="ds-component-header">
+          <span class="ds-component-title">Live Alert Demo</span>
+          <button class="btn-copy" onclick="copyCode('live-alert-code')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+            Copy
+          </button>
+        </div>
+        <div class="ds-component-preview">
+          <div class="preview-row">
+            <button class="btn btn-success" onclick="showLiveAlert('success')">Show Success</button>
+            <button class="btn btn-warning" onclick="showLiveAlert('warning')">Show Warning</button>
+            <button class="btn btn-danger" onclick="showLiveAlert('error')">Show Error</button>
+            <button class="btn btn-info" onclick="showLiveAlert('info')">Show Info</button>
+          </div>
+          <div id="liveAlertContainer" class="preview-stack" style="margin-top: 20px; max-width: 600px;"></div>
+        </div>
 
-  
-  
+        <div class="ds-component-code">
+          <div class="ds-component-code-header">
+            <span class="ds-component-code-lang">HTML</span>
+          </div>
+          <pre
+            id="live-alert-code"><code><span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"preview-row"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn btn-success"</span> <span class="token-attr">onclick</span>=<span class="token-value">"showLiveAlert('success')"</span><span class="token-tag">&gt;</span>Show Success<span class="token-tag">&lt;/button&gt;</span>
+  <span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn btn-warning"</span> <span class="token-attr">onclick</span>=<span class="token-value">"showLiveAlert('warning')"</span><span class="token-tag">&gt;</span>Show Warning<span class="token-tag">&lt;/button&gt;</span>
+  <span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn btn-danger"</span> <span class="token-attr">onclick</span>=<span class="token-value">"showLiveAlert('error')"</span><span class="token-tag">&gt;</span>Show Error<span class="token-tag">&lt;/button&gt;</span>
+  <span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn btn-info"</span> <span class="token-attr">onclick</span>=<span class="token-value">"showLiveAlert('info')"</span><span class="token-tag">&gt;</span>Show Info<span class="token-tag">&lt;/button&gt;</span>
+<span class="token-tag">&lt;/div&gt;</span>
+<span class="token-tag">&lt;div</span> <span class="token-attr">id</span>=<span class="token-value">"liveAlertContainer"</span> <span class="token-attr">class</span>=<span class="token-value">"preview-stack"</span><span class="token-tag">&gt;&lt;/div&gt;</span></code></pre>
+        </div>
+      </div>
+
+      <!-- ========================================== -->
+      <!-- Banner Alerts -->
+      <!-- ========================================== -->
+      <div class="ds-component">
+        <div class="ds-component-header">
+          <span class="ds-component-title">Banner Alerts</span>
+          <button class="btn-copy" onclick="copyCode('banner-alerts-ant')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+            Copy
+          </button>
+        </div>
+
+        <div class="ds-component-preview">
+          <div class="preview-stack" style="width: 100%; display: flex; flex-direction: column; gap: 16px;">
+
+            <!-- 1. Warning banner -->
+            <div class="alert alert-warning rounded-none m-0" role="alert">
+              <svg class="alert-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+              </svg>
+              <div class="alert-content">Warning text</div>
+            </div>
+
+            <!-- 2. Warning banner + Closable -->
+            <div class="alert alert-warning rounded-none m-0" role="alert">
+              <svg class="alert-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+              </svg>
+              <div class="alert-content">Very long warning text warning text text text text text text text</div>
+              <button class="alert-close" onclick="this.parentElement.remove()"
+                style="margin-left: auto; background: transparent; border: none; cursor: pointer;">×</button>
+            </div>
+
+            <!-- 3. Warning banner (No Icon) -->
+            <div class="alert alert-warning rounded-none m-0" role="alert">
+              <div class="alert-content">Warning text without icon</div>
+            </div>
+
+            <!-- 4. Error banner -->
+            <div class="alert alert-error rounded-none m-0" role="alert">
+              <svg class="alert-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z" />
+              </svg>
+              <div class="alert-content">Error text</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="ds-component-code">
+          <div class="ds-component-code-header">
+            <span class="ds-component-code-lang">HTML</span>
+          </div>
+          <pre id="banner-alerts-ant"><code><span class="token-comment">&lt;!-- Warning banner --&gt;</span>
+<span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"alert alert-warning rounded-none m-0"</span> <span class="token-attr">role</span>=<span class="token-value">"alert"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;svg</span> <span class="token-attr">class</span>=<span class="token-value">"alert-icon"</span> <span class="token-attr">viewBox</span>=<span class="token-value">"0 0 24 24"</span> <span class="token-attr">fill</span>=<span class="token-value">"currentColor"</span><span class="token-tag">&gt;</span>...<span class="token-tag">&lt;/svg&gt;</span>
+  <span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"alert-content"</span><span class="token-tag">&gt;</span>Warning text<span class="token-tag">&lt;/div&gt;</span>
+<span class="token-tag">&lt;/div&gt;</span></code></pre>
+        </div>
+      </div>
+
+      <!-- ========================================== -->
+      <!-- Marquee / Loop Banner Alert -->
+      <!-- ========================================== -->
+      <div class="ds-component">
+        <div class="ds-component-header">
+          <span class="ds-component-title">Loop Banner Alert</span>
+          <button class="btn-copy" onclick="copyCode('marquee-alert-ant')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+            Copy
+          </button>
+        </div>
+
+        <div class="ds-component-preview">
+          <div class="preview-stack" style="width: 100%;">
+            <!-- กล่องพรีวิวตัวอย่าง -->
+            <div class="alert alert-warning rounded-none m-0" role="alert">
+              <svg class="alert-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+              </svg>
+              <div class="alert-content marquee-wrapper">
+                <div class="marquee-content">
+                  I can be a React component, multiple React components, or just some text.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ds-component-code">
+          <div class="ds-component-code-header">
+            <!-- เปลี่ยนหัวข้อเป็น HTML อย่างเดียว -->
+            <span class="ds-component-code-lang">HTML</span>
+          </div>
+          <pre id="marquee-alert-ant"><code><span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"alert alert-warning rounded-none m-0"</span> <span class="token-attr">role</span>=<span class="token-value">"alert"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;svg</span> <span class="token-attr">class</span>=<span class="token-value">"alert-icon"</span> <span class="token-attr">viewBox</span>=<span class="token-value">"0 0 24 24"</span> <span class="token-attr">fill</span>=<span class="token-value">"currentColor"</span><span class="token-tag">&gt;</span>
+    <span class="token-tag">&lt;path</span> <span class="token-attr">d</span>=<span class="token-value">"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"</span> <span class="token-tag">/&gt;</span>
+  <span class="token-tag">&lt;/svg&gt;</span>
+  <span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"alert-content marquee-wrapper"</span><span class="token-tag">&gt;</span>
+    <span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"marquee-content"</span><span class="token-tag">&gt;</span>
+      I can be a React component, multiple React components, or just some text.
+    <span class="token-tag">&lt;/div&gt;</span>
+  <span class="token-tag">&lt;/div&gt;</span>
+<span class="token-tag">&lt;/div&gt;</span></code></pre>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Footer -->
+    <div class="divider-fancy">
+      <span class="divider-fancy-text">SUTH Design System v2.0.0</span>
+    </div>
+
+    <footer style="text-align: center; padding: 40px 0; color: var(--text-muted);">
+      <p style="margin-bottom: 8px;">© 2024 Suranaree University of Technology Hospital</p>
+      <p style="font-size: 0.8125rem;">Built with care for healthcare professionals</p>
+    </footer>
+
+  </main>
 </body>
+
 </html>

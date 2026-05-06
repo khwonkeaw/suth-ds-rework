@@ -134,6 +134,42 @@
         </div>
       </section>
 
+     <!-- Dynamic Tags -->
+      <div class="ds-component">
+        <div class="ds-component-header">
+          <span class="ds-component-title">Dynamic Tags </span>
+          <button class="btn-copy" onclick="copyCode('dynamic-tags')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy
+          </button>
+        </div>
+        
+        <div class="ds-component-preview">
+          <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 8px;">
+            <div id="tags-container" style="display: contents;"></div>
+            
+            <input id="new-tag-input" class="badge-input" type="text" style="display: none;" />
+            
+            <button id="new-tag-btn" class="badge badge-dashed">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              New Tag
+            </button>
+          </div>
+        </div>
+
+        <div class="ds-component-code">
+          <div class="ds-component-code-header">
+            <span class="ds-component-code-lang">HTML</span>
+          </div>
+          <pre id="dynamic-tags"><code><span class="token-tag">&lt;div</span> <span class="token-attr">style</span>=<span class="token-value">"display: flex; gap: 8px; flex-wrap: wrap;"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;div</span> <span class="token-attr">id</span>=<span class="token-value">"tags-container"</span> <span class="token-attr">style</span>=<span class="token-value">"display: contents;"</span><span class="token-tag">&gt;&lt;/div&gt;</span>
+  <span class="token-tag">&lt;input</span> <span class="token-attr">id</span>=<span class="token-value">"new-tag-input"</span> <span class="token-attr">class</span>=<span class="token-value">"badge-input"</span> <span class="token-attr">type</span>=<span class="token-value">"text"</span> <span class="token-attr">style</span>=<span class="token-value">"display: none;"</span> <span class="token-tag">/&gt;</span>
+  <span class="token-tag">&lt;button</span> <span class="token-attr">id</span>=<span class="token-value">"new-tag-btn"</span> <span class="token-attr">class</span>=<span class="token-value">"badge badge-dashed"</span><span class="token-tag">&gt;</span>+ New Tag<span class="token-tag">&lt;/button&gt;</span>
+<span class="token-tag">&lt;/div&gt;</span></code></pre>
+        </div>
+      </div>
+
+
       <!-- Footer -->
       <div class="divider-fancy">
         <span class="divider-fancy-text">SUTH Design System v2.0.0</span>
@@ -147,8 +183,7 @@
     </main>
   </div>
 
- 
+ <script src="../js/index-custom.js"></script>
 
- 
 </body>
 </html>

@@ -2526,67 +2526,6 @@ pre code {
 }
 
 /* ========================================
-   AVATAR
-   ======================================== */
-.avatar {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: white;
-  background: var(--primary-600);
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-.avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.avatar-xs { width: 24px; height: 24px; font-size: 0.625rem; }
-.avatar-sm { width: 32px; height: 32px; font-size: 0.75rem; }
-.avatar-lg { width: 48px; height: 48px; font-size: 1rem; }
-.avatar-xl { width: 64px; height: 64px; font-size: 1.25rem; }
-
-.avatar-group {
-  display: flex;
-}
-
-.avatar-group .avatar {
-  border: 2px solid var(--bg-primary);
-  margin-left: -8px;
-}
-
-.avatar-group .avatar:first-child {
-  margin-left: 0;
-}
-
-.avatar-status {
-  position: relative;
-}
-
-.avatar-status::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 10px;
-  height: 10px;
-  background: var(--success-500);
-  border: 2px solid var(--bg-primary);
-  border-radius: 50%;
-}
-
-.avatar-status.away::after { background: var(--warning-500); }
-.avatar-status.busy::after { background: var(--error-500); }
-.avatar-status.offline::after { background: var(--slate-400); }
-
-/* ========================================
    DIVIDER
    ======================================== */
 .divider {
@@ -3528,14 +3467,6 @@ pre code {
     var(--slate-700) 50%,
     var(--slate-800) 75%
   );
-}
-
-[data-theme="dark"] .avatar-group .avatar {
-  border-color: var(--slate-800);
-}
-
-[data-theme="dark"] .avatar-status::after {
-  border-color: var(--slate-800);
 }
 
 [data-theme="dark"] ::selection {
