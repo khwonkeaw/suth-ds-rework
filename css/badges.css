@@ -26,6 +26,7 @@
   align-items: center;
   gap: 4px;
   animation: badgeScaleIn 0.2s ease-out;
+  border-radius: 4px;
 }
 
 .badge-close {
@@ -161,44 +162,251 @@
   border: none !important;
 }
 
-.status-dot {
-  width: 6px;
-  height: 6px;
+.badge-status-dot {
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   display: inline-block;
   vertical-align: middle;
-  position: relative;
+  position: relative; 
 }
 
-.status-success { background-color: #52c41a; }
-.status-error { background-color: #ff4d4f; }
-.status-default { background-color: rgba(0, 0, 0, 0.25); }
-.status-warning { background-color: #faad14; }
-.status-processing, .status-processing-static { background-color: #1677ff; }
+.badge-dot-success-static { background-color: #52c41a; }
+.badge-dot-error-static   { background-color: #ff4d4f; }
+.badge-dot-default-static { background-color: rgba(0, 0, 0, 0.25); }
+.badge-dot-warning-static { background-color: #faad14; }
 
+.badge-dot-processing-active {
+  background-color: #1677ff;
+}
 
-.status-processing::after {
+.badge-dot-processing-active::after {
   position: absolute;
-  top: -1px;
-  left: -1px;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   border: 1px solid #1677ff;
   border-radius: 50%;
   content: "";
-  animation: statusProcessingAni 1.2s infinite ease-in-out;
-  box-sizing: content-box;
+  animation: badgeStatusPulse 1.2s infinite ease-in-out;
+  box-sizing: border-box;
 }
 
-@keyframes statusProcessingAni {
+@keyframes badgeStatusPulse {
   0% { transform: scale(0.8); opacity: 0.5; }
   100% { transform: scale(2.4); opacity: 0; }
 }
 
-.status-item {
+.badge-status-item {
   font-size: 14px;
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: #333;
+  gap: 10px;
+  color: rgba(0, 0, 0, 0.88);
+}
+
+
+/* ========================================
+  Colorful Badges
+   ======================================== */
+.badge-dot-pink { background-color: #eb2f96; }
+.badge-dot-red { background-color: #f5222d; }
+.badge-dot-yellow { background-color: #fadb14; }
+.badge-dot-orange { background-color: #fa8c16; }
+.badge-dot-cyan { background-color: #13c2c2; }
+.badge-dot-green { background-color: #52c41a; }
+.badge-dot-blue { background-color: #1890ff; }
+.badge-dot-purple { background-color: #722ed1; }
+.badge-dot-geekblue { background-color: #2f54eb; }
+.badge-dot-magenta { background-color: #eb2f96; }
+.badge-dot-volcano { background-color: #fa541c; }
+.badge-dot-gold { background-color: #faad14; }
+.badge-dot-lime { background-color: #a0d911; }
+
+/* ========================================
+   RIBBON BADGES
+   ======================================== */
+.badge-ribbon-wrapper {
+  position: relative;
+  display: block;
+  flex: 0 0 calc(33.33% - 16px); 
+  min-width: 250px; 
+}
+
+@media (max-width: 992px) {
+  .badge-ribbon-wrapper { flex: 0 0 calc(50% - 16px); }
+}
+@media (max-width: 576px) {
+  .badge-ribbon-wrapper { flex: 0 0 100%; }
+}
+
+.badge-ribbon-card {
+  background: #ffffff;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 100%; 
+}
+
+.badge-ribbon-card-title {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  font-weight: 600;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.88);
+}
+
+.badge-ribbon-card-body {
+  padding: 12px 16px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.88);
+}
+
+.badge-ribbon {
+  position: absolute;
+  top: 12px;
+  right: -8px;
+  padding: 0 8px;
+  height: 22px;
+  line-height: 22px;
+  font-size: 12px;
+  color: #fff;
+  border-radius: 4px 4px 4px 0;
+  z-index: 10;
+}
+
+.badge-ribbon::after {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  content: "";
+  border: 4px solid transparent;
+  border-top: 4px solid var(--ribbon-color);
+  border-left: 4px solid var(--ribbon-color);
+  filter: brightness(0.75);
+}
+
+/* ชุดสี */
+.badge-ribbon-blue { --ribbon-color: #1677ff; background-color: var(--ribbon-color); }
+.badge-ribbon-pink { --ribbon-color: #eb2f96; background-color: var(--ribbon-color); }
+.badge-ribbon-red { --ribbon-color: #f5222d; background-color: var(--ribbon-color); }
+.badge-ribbon-cyan { --ribbon-color: #13c2c2; background-color: var(--ribbon-color); }
+.badge-ribbon-green { --ribbon-color: #52c41a; background-color: var(--ribbon-color); }
+.badge-ribbon-purple { --ribbon-color: #722ed1; background-color: var(--ribbon-color); }
+.badge-ribbon-volcano { --ribbon-color: #fa541c; background-color: var(--ribbon-color); }
+.badge-ribbon-magenta { --ribbon-color: #eb2f96; background-color: var(--ribbon-color); }
+
+/* ========================================
+   TAG & BADGE VARIANTS (PRESETS)
+   ======================================== */
+
+/* --- 1. SOLID (สีทึบ ข้อความสีขาว) --- */
+.badge-solid-magenta  { background: #eb2f96; color: #fff; border: 1px solid #eb2f96; }
+.badge-solid-red      { background: #f5222d; color: #fff; border: 1px solid #f5222d; }
+.badge-solid-volcano  { background: #fa541c; color: #fff; border: 1px solid #fa541c; }
+.badge-solid-orange   { background: #fa8c16; color: #fff; border: 1px solid #fa8c16; }
+.badge-solid-gold     { background: #faad14; color: #fff; border: 1px solid #faad14; }
+.badge-solid-lime     { background: #a0d911; color: #fff; border: 1px solid #a0d911; }
+.badge-solid-green    { background: #52c41a; color: #fff; border: 1px solid #52c41a; }
+.badge-solid-cyan     { background: #13c2c2; color: #fff; border: 1px solid #13c2c2; }
+.badge-solid-blue     { background: #1677ff; color: #fff; border: 1px solid #1677ff; }
+.badge-solid-geekblue { background: #2f54eb; color: #fff; border: 1px solid #2f54eb; }
+.badge-solid-purple   { background: #722ed1; color: #fff; border: 1px solid #722ed1; }
+
+/* --- 2. FILLED (พื้นหลังสีอ่อน ข้อความสีเข้ม) --- */
+.badge-filled-magenta  { background: rgba(235, 47, 150, 0.1); color: #eb2f96; border: 1px solid transparent; }
+.badge-filled-red      { background: rgba(245, 34, 45, 0.1); color: #f5222d; border: 1px solid transparent; }
+.badge-filled-volcano  { background: rgba(250, 84, 28, 0.1); color: #fa541c; border: 1px solid transparent; }
+.badge-filled-orange   { background: rgba(250, 140, 22, 0.1); color: #fa8c16; border: 1px solid transparent; }
+.badge-filled-gold     { background: rgba(250, 173, 20, 0.1); color: #faad14; border: 1px solid transparent; }
+.badge-filled-lime     { background: rgba(160, 217, 17, 0.1); color: #a0d911; border: 1px solid transparent; }
+.badge-filled-green    { background: rgba(82, 196, 26, 0.1); color: #52c41a; border: 1px solid transparent; }
+.badge-filled-cyan     { background: rgba(19, 194, 194, 0.1); color: #13c2c2; border: 1px solid transparent; }
+.badge-filled-blue     { background: rgba(22, 119, 255, 0.1); color: #1677ff; border: 1px solid transparent; }
+.badge-filled-geekblue { background: rgba(47, 84, 235, 0.1); color: #2f54eb; border: 1px solid transparent; }
+.badge-filled-purple   { background: rgba(114, 46, 209, 0.1); color: #722ed1; border: 1px solid transparent; }
+
+/* --- 3. OUTLINE (พื้นหลังสีจาง ขอบสี ข้อความสี) --- */
+.badge-outline-magenta  { background: rgba(235, 47, 150, 0.1); color: #eb2f96; border: 1px solid #eb2f96; }
+.badge-outline-red      { background: rgba(245, 34, 45, 0.1); color: #f5222d; border: 1px solid #f5222d; }
+.badge-outline-volcano  { background: rgba(250, 84, 28, 0.1); color: #fa541c; border: 1px solid #fa541c; }
+.badge-outline-orange   { background: rgba(250, 140, 22, 0.1); color: #fa8c16; border: 1px solid #fa8c16; }
+.badge-outline-gold     { background: rgba(250, 173, 20, 0.1); color: #faad14; border: 1px solid #faad14; }
+.badge-outline-lime     { background: rgba(160, 217, 17, 0.1); color: #a0d911; border: 1px solid #a0d911; }
+.badge-outline-green    { background: rgba(82, 196, 26, 0.1); color: #52c41a; border: 1px solid #52c41a; }
+.badge-outline-cyan     { background: rgba(19, 194, 194, 0.1); color: #13c2c2; border: 1px solid #13c2c2; }
+.badge-outline-blue     { background: rgba(22, 119, 255, 0.1); color: #1677ff; border: 1px solid #1677ff; }
+.badge-outline-geekblue { background: rgba(47, 84, 235, 0.1); color: #2f54eb; border: 1px solid #2f54eb; }
+.badge-outline-purple   { background: rgba(114, 46, 209, 0.1); color: #722ed1; border: 1px solid #722ed1; }
+
+.angular-variant .badge {
+ border-radius: 4px;       
+  padding: 2px 5px;        
+  font-size: 10px;          
+  font-weight: 400;        
+  line-height: 20px;    
+}
+
+/* ========================================
+   DYNAMIC TAGS (ADD / REMOVE)
+   ======================================== */
+.badge-dashed {
+  background: #ffffff;
+  border: 1px dashed #d9d9d9;
+  color: rgba(0, 0, 0, 0.88);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.badge-dashed:hover {
+  border-color: #1677ff;
+  color: #1677ff;
+}
+
+.badge-close-icon {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.45);
+  margin-left: 4px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.badge-close-icon:hover {
+  color: rgba(0, 0, 0, 0.88);
+}
+
+/* --- อนิเมชันสำหรับไอคอนหมุน (Processing) --- */
+.icon-spin {
+  animation: badge-spin 1s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes badge-spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* --- CheckableTag Interactions --- */
+.badge-checkable {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid transparent; 
+  background-color: transparent; 
+  color: rgba(0, 0, 0, 0.88);
+}
+.badge-checkable.badge-solid-blue {
+  background-color: #1677ff;
+  border-color: #1677ff;
+  color: #fff;
+}
+.badge-checkable.badge-solid-blue:hover {
+  background-color: #0050b3;
+  border-color: #0050b3;
+}
+.badge-checkable:not(.badge-solid-blue):hover {
+  background-color: #f5f5f5;
+  color: #1677ff;
 }

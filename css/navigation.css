@@ -1,0 +1,170 @@
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+
+  padding: 16px 24px;
+
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Brand */
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f172a;
+
+  text-decoration: none;
+
+  flex-shrink: 0;
+}
+
+.navbar-brand svg {
+  flex-shrink: 0;
+}
+
+/* Menu */
+
+.navbar-nav {
+  display: flex;
+
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 8px;
+
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+
+  flex-wrap: nowrap;
+}
+
+/* li */
+
+.navbar-nav li {
+  margin: 0;
+  padding: 0;
+
+  display: inline-flex;
+}
+
+/* Link */
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 16px;
+
+  border-radius: 10px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  color: #475569;
+  text-decoration: none;
+
+  transition: 0.2s ease;
+
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.nav-link.active {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+/* =========================
+   BREADCRUMB
+========================= */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 6px;
+
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+
+  font-size: 14px;
+
+  color: #64748b;
+}
+
+.breadcrumb-item:not(:last-child)::after {
+  content: "/";
+
+  margin: 0 6px;
+
+  color: #94a3b8;
+}
+
+.breadcrumb-item a {
+  color: #475569;
+  text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+  color: #2563eb;
+}
+
+.breadcrumb-item.active {
+  color: #94a3b8;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 16px;
+  }
+
+  .navbar-nav {
+    width: 100%;
+
+    flex-wrap: wrap;
+
+    justify-content: flex-start;
+  }
+
+}

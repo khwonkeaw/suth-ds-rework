@@ -15,6 +15,7 @@
   <!-- Custom CSS -->
   <link href="css/index-custom.css" rel="stylesheet">
   <link href="suth-ds.css" rel="stylesheet">
+  <link href="css/crud.css" rel="stylesheet">
 </head>
 <body>
   <div class="ds-layout">
@@ -539,7 +540,7 @@
           </div>
           <div class="ds-component-preview">
             <div class="preview-stack" style="gap: 12px; max-width: 400px;">
-              <div class="toast toast-success" style="position: static; animation: none; pointer-events: auto;">
+              <div class="toast toast-success">
                 <svg class="toast-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--success-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                 <div class="toast-content">
                   <div class="toast-title">Success!</div>
@@ -547,7 +548,7 @@
                 </div>
                 <button class="toast-close">×</button>
               </div>
-              <div class="toast toast-info" style="position: static; animation: none; pointer-events: auto; border-left-color: var(--info-500);">
+              <div class="toast toast-info">
                 <svg class="toast-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--info-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
                 <div class="toast-content">
                   <div class="toast-title">Info</div>
@@ -555,7 +556,7 @@
                 </div>
                 <button class="toast-close">×</button>
               </div>
-              <div class="toast toast-warning" style="position: static; animation: none; pointer-events: auto; border-left-color: var(--warning-500);">
+              <div class="toast toast-warning">
                 <svg class="toast-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--warning-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
                 <div class="toast-content">
                   <div class="toast-title">Warning</div>
@@ -563,7 +564,7 @@
                 </div>
                 <button class="toast-close">×</button>
               </div>
-              <div class="toast toast-error" style="position: static; animation: none; pointer-events: auto; border-left-color: var(--error-500);">
+              <div class="toast toast-error">
                 <svg class="toast-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--error-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
                 <div class="toast-content">
                   <div class="toast-title">Error</div>
@@ -659,7 +660,7 @@
           </div>
           <div class="ds-component-preview">
            <div style="background: rgba(15, 23, 42, 0.6); padding: 40px; border-radius: var(--radius-lg); display: flex; justify-content: center; align-items: center; min-height: 300px;">
-              <div class="modal modal-sm" style="position: static; transform: none; box-shadow: var(--shadow-2xl);">
+              <div class="modal modal-sm show delete-demo-modal">
                 <div class="modal-body" style="text-align: center; padding: 40px;">
                   <div style="width: 72px; height: 72px; background: var(--error-50); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--error-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>

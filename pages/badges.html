@@ -58,8 +58,8 @@
 
       <div class="ds-component">
         <div class="ds-component-header">
-          <span class="ds-component-title">Solid Badges</span>
-          <button class="btn-copy" onclick="copyCode('badge-solid')">
+          <span class="ds-component-title">Tag Variants & Colors</span>
+          <button class="btn-copy" onclick="copyCode('badge-variants')">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round">
               <rect x="9" y="9" width="13" height="13" rx="2" />
@@ -68,311 +68,893 @@
             Copy
           </button>
         </div>
+
         <div class="ds-component-preview">
-          <div class="preview-row">
-            <span class="badge badge-primary">Primary</span>
-            <span class="badge badge-success">Success</span>
-            <span class="badge badge-warning">Warning</span>
-            <span class="badge badge-error">Error</span>
-            <span class="badge badge-info">Info</span>
-            <span class="badge badge-default">Default</span>
-            <span class="badge badge-purple">Purple</span>
-            <span class="badge badge-pink">Pink</span>
+          <div class="d-flex flex-column gap-4 angular-variant">
+
+            <div>
+              <div class="text-muted fw-medium mb-3" style="font-size: 14px;">Presets (filled)</div>
+              <div class="d-flex gap-2 align-items-center flex-wrap">
+                <span class="badge badge-filled-magenta">magenta</span>
+                <span class="badge badge-filled-red">red</span>
+                <span class="badge badge-filled-volcano">volcano</span>
+                <span class="badge badge-filled-orange">orange</span>
+                <span class="badge badge-filled-gold">gold</span>
+                <span class="badge badge-filled-lime">lime</span>
+                <span class="badge badge-filled-green">green</span>
+                <span class="badge badge-filled-cyan">cyan</span>
+                <span class="badge badge-filled-blue">blue</span>
+                <span class="badge badge-filled-geekblue">geekblue</span>
+                <span class="badge badge-filled-purple">purple</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="text-muted fw-medium mb-3" style="font-size: 14px;">Presets (solid)</div>
+              <div class="d-flex gap-2 align-items-center flex-wrap">
+                <span class="badge badge-solid-magenta">magenta</span>
+                <span class="badge badge-solid-red">red</span>
+                <span class="badge badge-solid-volcano">volcano</span>
+                <span class="badge badge-solid-orange">orange</span>
+                <span class="badge badge-solid-gold">gold</span>
+                <span class="badge badge-solid-lime">lime</span>
+                <span class="badge badge-solid-green">green</span>
+                <span class="badge badge-solid-cyan">cyan</span>
+                <span class="badge badge-solid-blue">blue</span>
+                <span class="badge badge-solid-geekblue">geekblue</span>
+                <span class="badge badge-solid-purple">purple</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="text-muted fw-medium mb-3" style="font-size: 14px;">Presets (outlined)</div>
+              <div class="d-flex gap-2 align-items-center flex-wrap">
+                <span class="badge badge-outline-magenta">magenta</span>
+                <span class="badge badge-outline-red">red</span>
+                <span class="badge badge-outline-volcano">volcano</span>
+                <span class="badge badge-outline-orange">orange</span>
+                <span class="badge badge-outline-gold">gold</span>
+                <span class="badge badge-outline-lime">lime</span>
+                <span class="badge badge-outline-green">green</span>
+                <span class="badge badge-outline-cyan">cyan</span>
+                <span class="badge badge-outline-blue">blue</span>
+                <span class="badge badge-outline-geekblue">geekblue</span>
+                <span class="badge badge-outline-purple">purple</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="text-muted fw-medium mb-3" style="font-size: 14px;">Custom (filled)</div>
+              <div class="d-flex gap-2 align-items-center flex-wrap">
+                <span class="badge" style="background: rgba(255, 85, 0, 0.1); color: #f50;">#f50</span>
+                <span class="badge" style="background: rgba(45, 183, 245, 0.1); color: #2db7f5;">#2db7f5</span>
+                <span class="badge" style="background: rgba(135, 208, 104, 0.1); color: #87d068;">#87d068</span>
+                <span class="badge" style="background: rgba(16, 142, 233, 0.1); color: #108ee9;">#108ee9</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="text-muted fw-medium mb-3" style="font-size: 14px;">Custom (solid)</div>
+              <div class="d-flex gap-2 align-items-center flex-wrap">
+                <span class="badge" style="background: #f50; color: #fff;">#f50</span>
+                <span class="badge" style="background: #2db7f5; color: #fff;">#2db7f5</span>
+                <span class="badge" style="background: #87d068; color: #fff;">#87d068</span>
+                <span class="badge" style="background: #108ee9; color: #fff;">#108ee9</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="text-muted fw-medium mb-3" style="font-size: 14px;">Custom (outlined)</div>
+              <div class="d-flex gap-2 align-items-center flex-wrap">
+                <span class="badge"
+                  style="background: rgba(255, 85, 0, 0.1); color: #f50; border: 1px solid #f50;">#f50</span>
+                <span class="badge"
+                  style="background: rgba(45, 183, 245, 0.1); color: #2db7f5; border: 1px solid #2db7f5;">#2db7f5</span>
+                <span class="badge"
+                  style="background: rgba(135, 208, 104, 0.1); color: #87d068; border: 1px solid #87d068;">#87d068</span>
+                <span class="badge"
+                  style="background: rgba(16, 142, 233, 0.1); color: #108ee9; border: 1px solid #108ee9;">#108ee9</span>
+              </div>
+            </div>
+
           </div>
         </div>
+
         <div class="ds-component-code">
           <div class="ds-component-code-header">
             <span class="ds-component-code-lang">HTML</span>
           </div>
-          <pre
-            id="badge-solid"><code><span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge badge-primary"</span><span class="token-tag">&gt;</span>Primary<span class="token-tag">&lt;/span&gt;</span>
-<span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge badge-success"</span><span class="token-tag">&gt;</span>Success<span class="token-tag">&lt;/span&gt;</span>
-<span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge badge-warning"</span><span class="token-tag">&gt;</span>Warning<span class="token-tag">&lt;/span&gt;</span>
-<span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge badge-error"</span><span class="token-tag">&gt;</span>Error<span class="token-tag">&lt;/span&gt;</span>
-<span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge badge-info"</span><span class="token-tag">&gt;</span>Info<span class="token-tag">&lt;/span&gt;</span>
-<span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge badge-default"</span><span class="token-tag">&gt;</span>Default<span class="token-tag">&lt;/span&gt;</span></code></pre>
-        </div>
-      </div>
+          <pre id="badge-variants"><code><span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"d-flex gap-2 flex-wrap"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge badge-filled-magenta"</span><span class="token-tag">&gt;</span>magenta<span class="token-tag">&lt;/span&gt;</span>
+  <span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge badge-solid-magenta"</span><span class="token-tag">&gt;</span>magenta<span class="token-tag">&lt;/span&gt;</span>
+  <span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge badge-outline-magenta"</span><span class="token-tag">&gt;</span>magenta<span class="token-tag">&lt;/span&gt;</span>
+<span class="token-tag">&lt;/div&gt;</span>
 
-      <div class="ds-component">
-        <div class="ds-component-header">
-          <span class="ds-component-title">Outline Badges</span>
-          <button class="btn-copy" onclick="copyCode('badge-outline')">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <rect x="9" y="9" width="13" height="13" rx="2" />
-              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
-            </svg>
-            Copy
-          </button>
-        </div>
-        <div class="ds-component-preview">
-          <div class="preview-row">
-            <span class="badge badge-outline-primary">Outline</span>
-            <span class="badge badge-outline-success">Success</span>
-            <span class="badge badge-outline-error">Error</span>
-            <span class="badge badge-outline-warning">Warning</span>
-          </div>
-        </div>
-        <div class="ds-component-code">
-          <div class="ds-component-code-header">
-            <span class="ds-component-code-lang">HTML</span>
-          </div>
-          <pre
-            id="badge-outline"><code><span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge badge-outline-primary"</span><span class="token-tag">&gt;</span>Outline<span class="token-tag">&lt;/span&gt;</span>
-<span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge badge-outline-success"</span><span class="token-tag">&gt;</span>Success<span class="token-tag">&lt;/span&gt;</span></code></pre>
-        </div>
-      </div>
-
-      <div class="ds-component">
-        <div class="ds-component-header">
-          <span class="ds-component-title">Badge Sizes & Pulse</span>
-          <button class="btn-copy" onclick="copyCode('badge-sizes')">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <rect x="9" y="9" width="13" height="13" rx="2" />
-              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
-            </svg>
-            Copy
-          </button>
-        </div>
-        <div class="ds-component-preview">
-          <div class="preview-row" style="align-items: center;">
-            <span class="badge badge-primary badge-sm">Small</span>
-            <span class="badge badge-primary">Default</span>
-            <span class="badge badge-primary badge-lg">Large</span>
-            <span class="badge badge-success badge-pulse">Pulsing</span>
-            <span class="badge badge-error badge-pulse">New</span>
-            <span class="badge badge-warning">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10" />
-                <line x1="12" y1="8" x2="12" y2="12" />
-                <line x1="12" y1="16" x2="12.01" y2="16" />
-              </svg>
-              With Icon
-            </span>
-          </div>
-        </div>
-        <div class="ds-component-code">
-          <div class="ds-component-code-header">
-            <span class="ds-component-code-lang">HTML</span>
-          </div>
-          <pre
-            id="badge-sizes"><code><span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge badge-primary badge-sm"</span><span class="token-tag">&gt;</span>Small<span class="token-tag">&lt;/span&gt;</span>
-<span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge badge-primary badge-lg"</span><span class="token-tag">&gt;</span>Large<span class="token-tag">&lt;/span&gt;</span>
-<span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge badge-success badge-pulse"</span><span class="token-tag">&gt;</span>Pulsing<span class="token-tag">&lt;/span&gt;</span></code></pre>
-        </div>
-      </div>
-    </section>
-
-    <!-- Status Badges Section -->
-    <div class="ds-component">
-      <div class="ds-component-header">
-        <span class="ds-component-title">Status Badges</span>
-        <button class="btn-copy" onclick="copyCode('badge-status')">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <rect x="9" y="9" width="13" height="13" rx="2" />
-            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
-          </svg>
-          Copy
-        </button>
-      </div>
-
-      <div class="ds-component-preview">
-        <!-- ส่วนที่ 1: จุดสถานะแบบนิ่ง (Dots Only) -->
-        <div class="preview-row" style="gap: 16px; margin-bottom: 24px;">
-          <span class="status-dot status-success"></span>
-          <span class="status-dot status-error"></span>
-          <span class="status-dot status-default"></span>
-          <span class="status-dot status-processing-static"></span> <!-- Processing แบบนิ่ง -->
-          <span class="status-dot status-warning"></span>
-        </div>
-
-        <!-- ส่วนที่ 2: จุดสถานะพร้อมข้อความ (มี Animation เฉพาะตัว Processing) -->
-        <div style="display: flex; flex-direction: column; gap: 12px;">
-          <div class="status-item"><span class="status-dot status-success"></span> Success</div>
-          <div class="status-item"><span class="status-dot status-error"></span> Error</div>
-          <div class="status-item"><span class="status-dot status-default"></span> Default</div>
-          <div class="status-item"><span class="status-dot status-processing"></span> Processing</div>
-          <!-- มี Animation -->
-          <div class="status-item"><span class="status-dot status-warning"></span> Warning</div>
-        </div>
-      </div>
-
-      <div class="ds-component-code">
-        <div class="ds-component-code-header">
-          <span class="ds-component-code-lang">HTML</span>
-        </div>
-        <pre id="badge-status"><code><span class="token-tag">&lt;!-- เฉพาะจุดสถานะ (Static) --&gt;</span>
-<span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"status-dot status-success"</span><span class="token-tag">&gt;&lt;/span&gt;</span>
-
-<span class="token-tag">&lt;!-- จุดสถานะพร้อมข้อความ (Animated Processing) --&gt;</span>
-<span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"status-item"</span><span class="token-tag">&gt;</span>
-  <span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"status-dot status-processing"</span><span class="token-tag">&gt;&lt;/span&gt;</span> Processing
+<span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"d-flex gap-2 flex-wrap"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge"</span> <span class="token-attr">style</span>=<span class="token-value">"background: rgba(255, 85, 0, 0.1); color: #f50;"</span><span class="token-tag">&gt;</span>#f50<span class="token-tag">&lt;/span&gt;</span>
+  <span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge"</span> <span class="token-attr">style</span>=<span class="token-value">"background: #f50; color: #fff;"</span><span class="token-tag">&gt;</span>#f50<span class="token-tag">&lt;/span&gt;</span>
+  <span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge"</span> <span class="token-attr">style</span>=<span class="token-value">"background: rgba(255, 85, 0, 0.1); color: #f50; border: 1px solid #f50;"</span><span class="token-tag">&gt;</span>#f50<span class="token-tag">&lt;/span&gt;</span>
 <span class="token-tag">&lt;/div&gt;</span></code></pre>
-      </div>
-    </div>
-
-    <div class="ds-component">
-      <div class="ds-component-header">
-        <span class="ds-component-title">Overflow Count</span>
-        <button class="btn-copy" onclick="copyCode('badge-overflow')">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <rect x="9" y="9" width="13" height="13" rx="2" />
-            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
-          </svg>
-          Copy
-        </button>
-      </div>
-      <div class="ds-component-preview">
-        <div class="preview-row" style="gap: 32px; padding: 20px;">
-          <!-- ตัวอย่างที่ 1: 99 -->
-          <div class="badge-wrapper">
-            <div class="avatar-placeholder"></div>
-            <span class="badge badge-error count-tag">99</span>
-          </div>
-
-          <!-- ตัวอย่างที่ 2: 99+ -->
-          <div class="badge-wrapper">
-            <div class="avatar-placeholder"></div>
-            <span class="badge badge-error count-tag">99+</span>
-          </div>
-
-          <!-- ตัวอย่างที่ 3: 10+ -->
-          <div class="badge-wrapper">
-            <div class="avatar-placeholder"></div>
-            <span class="badge badge-error count-tag">10+</span>
-          </div>
-
-          <!-- ตัวอย่างที่ 4: 999+ -->
-          <div class="badge-wrapper">
-            <div class="avatar-placeholder"></div>
-            <span class="badge badge-error count-tag">999+</span>
-          </div>
         </div>
       </div>
-      <div class="ds-component-code">
-        <div class="ds-component-code-header">
-          <span class="ds-component-code-lang">HTML</span>
+
+      <!-- Add & Remove Tags -->
+      <div class="ds-component">
+        <div class="ds-component-header">
+          <span class="ds-component-title">Add & Remove Tags</span>
+          <button class="btn-copy" onclick="copyCode('badge-dynamic')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+            Copy
+          </button>
         </div>
-        <pre id="badge-overflow"><code><span class="token-tag">&lt;!-- ตัวอย่างที่ 1: 99 --&gt;</span>
-<span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"badge-wrapper"</span><span class="token-tag">&gt;</span>
+
+        <div class="ds-component-preview">
+          <div class="d-flex flex-wrap gap-2 align-items-center angular-variant" id="tags-container">
+
+            <span class="badge badge-default d-inline-flex align-items-center">
+              Tag 1
+              <span class="badge-close-icon">
+                <svg viewBox="64 64 896 896" width="10" height="10" fill="currentColor">
+                  <path
+                    d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z">
+                  </path>
+                </svg>
+              </span>
+            </span>
+
+            <span class="badge badge-default d-inline-flex align-items-center">
+              Tag 2
+              <span class="badge-close-icon">
+                <svg viewBox="64 64 896 896" width="10" height="10" fill="currentColor">
+                  <path
+                    d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z">
+                  </path>
+                </svg>
+              </span>
+            </span>
+
+            <span class="badge badge-default d-inline-flex align-items-center">
+              Tag 3
+              <span class="badge-close-icon">
+                <svg viewBox="64 64 896 896" width="10" height="10" fill="currentColor">
+                  <path
+                    d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z">
+                  </path>
+                </svg>
+              </span>
+            </span>
+
+            <span class="badge badge-dashed d-inline-flex align-items-center gap-1" id="btn-new-tag">
+              <svg viewBox="64 64 896 896" width="10" height="10" fill="currentColor">
+                <path d="M482 152h60q8 0 8 8v704q0 8-8 8h-60q-8 0-8-8V160q0-8 8-8z"></path>
+                <path d="M176 474h672q8 0 8 8v60q0 8-8 8H176q-8 0-8-8v-60q0-8 8-8z"></path>
+              </svg>
+              New Tag
+            </span>
+
+            <input type="text" class="badge-input" id="input-new-tag" style="display: none;">
+          </div>
+        </div>
+        <div class="ds-component-code">
+          <div class="ds-component-code-header">
+            <span class="ds-component-code-lang">HTML</span>
+          </div>
+          <pre id="badge-dynamic"><code><span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"d-flex flex-wrap gap-2 align-items-center angular-variant"</span> <span class="token-attr">id</span>=<span class="token-value">"tags-container"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge badge-default d-inline-flex align-items-center"</span><span class="token-tag">&gt;</span>
+    Tag 1
+    <span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge-close-icon"</span><span class="token-tag">&gt;</span>
+      <span class="token-tag">&lt;svg</span> <span class="token-attr">viewBox</span>=<span class="token-value">"64 64 896 896"</span> <span class="token-attr">width</span>=<span class="token-value">"10"</span> <span class="token-attr">height</span>=<span class="token-value">"10"</span> <span class="token-attr">fill</span>=<span class="token-value">"currentColor"</span><span class="token-tag">&gt;</span><span class="token-tag">&lt;path</span> <span class="token-attr">d</span>=<span class="token-value">"M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"</span><span class="token-tag">&gt;&lt;/path&gt;&lt;/svg&gt;</span>
+    <span class="token-tag">&lt;/span&gt;</span>
+  <span class="token-tag">&lt;/span&gt;</span>
+
+  <span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge badge-dashed d-inline-flex align-items-center gap-1"</span> <span class="token-attr">id</span>=<span class="token-value">"btn-new-tag"</span><span class="token-tag">&gt;</span>
+    <span class="token-tag">&lt;svg</span> <span class="token-attr">viewBox</span>=<span class="token-value">"64 64 896 896"</span> <span class="token-attr">width</span>=<span class="token-value">"10"</span> <span class="token-attr">height</span>=<span class="token-value">"10"</span> <span class="token-attr">fill</span>=<span class="token-value">"currentColor"</span><span class="token-tag">&gt;</span><span class="token-tag">&lt;path</span> <span class="token-attr">d</span>=<span class="token-value">"M482 152h60q8 0 8 8v704q0 8-8 8h-60q-8 0-8-8V160q0-8 8-8z"</span><span class="token-tag">&gt;&lt;/path&gt;&lt;path</span> <span class="token-attr">d</span>=<span class="token-value">"M176 474h672q8 0 8 8v60q0 8-8 8H176q-8 0-8-8v-60q0-8 8-8z"</span><span class="token-tag">&gt;&lt;/path&gt;&lt;/svg&gt;</span>
+    New Tag
+  <span class="token-tag">&lt;/span&gt;</span>
+
+  <span class="token-tag">&lt;input</span> <span class="token-attr">type</span>=<span class="token-value">"text"</span> <span class="token-attr">class</span>=<span class="token-value">"badge-input"</span> <span class="token-attr">id</span>=<span class="token-value">"input-new-tag"</span> <span class="token-attr">style</span>=<span class="token-value">"display: none;"</span><span class="token-tag">&gt;</span>
+<span class="token-tag">&lt;/div&gt;</span></code></pre>
+        </div>
+      </div>
+
+      <!-- Status Tags -->
+      <div class="ds-component">
+        <div class="ds-component-header">
+          <span class="ds-component-title">Status Tags</span>
+          <button class="btn-copy" onclick="copyCode('badge-status-tags')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+            Copy
+          </button>
+        </div>
+
+        <div class="ds-component-preview">
+          <div class="d-flex flex-column gap-4 angular-variant">
+
+            <div>
+              <div class="text-muted fw-medium mb-3" style="font-size: 14px;">Status (filled)</div>
+              <div class="d-flex gap-2 align-items-center flex-wrap" style="text-transform: lowercase;">
+                <span class="badge badge-filled-green" style="gap: 6px;">
+                  <svg viewBox="64 64 896 896" width="14" height="14" fill="currentColor">
+                    <path
+                      d="M699 353h-46.9c-10.2 0-19.9 4.9-25.9 13.3L469 584.3l-71.2-98.8c-6-8.3-15.6-13.3-25.9-13.3H325c-6.5 0-10.3 7.4-6.5 12.7l124.6 172.8a31.8 31.8 0 0051.7 0l210.6-292c3.9-5.3.1-12.7-6.4-12.7z">
+                    </path>
+                    <path
+                      d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z">
+                    </path>
+                  </svg>
+                  success
+                </span>
+                <span class="badge badge-filled-blue" style="gap: 6px;">
+                  <svg class="icon-spin" viewBox="64 64 896 896" width="14" height="14" fill="currentColor">
+                    <path
+                      d="M168 504.2c1-43.7 10-86.1 26.9-126 17.3-41 42.1-77.7 73.7-109.4S337 212.3 378 195c42.4-17.9 87.4-27 133.9-27s91.5 9.1 133.8 27A341.5 341.5 0 01755 268.8c9.9 9.9 19.2 20.4 27.8 31.4l-60.2 47a8 8 0 003 14.1l175.7 43c5 1.2 9.9-2.6 9.9-7.7l.8-180.9c0-6.7-7.7-10.5-12.9-6.3l-56.4 44.1C765.8 155.1 646.2 92 511.8 92 282.7 92 96.3 275.6 92 503.8a8 8 0 008 8.2h60c4.4 0 8-3.6 8-7.8zm756 7.8h-60c-4.4 0-8 3.6-8 7.8-1 43.7-10 86.1-26.9 126-17.3 41-42.1 77.8-73.7 109.4A342.45 342.45 0 01512.1 856a342.24 342.24 0 01-243.2-100.8c-9.9-9.9-19.2-20.4-27.8-31.4l60.2-47a8 8 0 00-3-14.1l-175.7-43c-5-1.2-9.9 2.6-9.9 7.7l-.8 180.9c0 6.7 7.7 10.5 12.9 6.3l56.4-44.1C258.2 868.9 377.8 932 512.2 932c229.2 0 415.5-183.7 419.8-411.8a8 8 0 00-8-8.2z">
+                    </path>
+                  </svg>
+                  processing
+                </span>
+                <span class="badge badge-filled-gold" style="gap: 6px;">
+                  <svg viewBox="64 64 896 896" width="14" height="14" fill="currentColor">
+                    <path
+                      d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z">
+                    </path>
+                    <path
+                      d="M464 688a48 48 0 1096 0 48 48 0 10-96 0zm24-112h48c4.4 0 8-3.6 8-8V296c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8z">
+                    </path>
+                  </svg>
+                  warning
+                </span>
+                <span class="badge badge-filled-red" style="gap: 6px;">
+                  <svg viewBox="64 64 896 896" width="14" height="14" fill="currentColor">
+                    <path
+                      d="M685.4 354.8c0-4.4-3.6-8-8-8l-66 .3L512 465.6l-99.3-118.4-66-.3c-4.4 0-8 3.5-8 8 0 1.9.7 3.7 1.9 5.2l130.1 155L340.5 670a8.32 8.32 0 00-1.9 5.2c0 4.4 3.6 8 8 8l66-.3L512 564.4l99.3 118.4 66 .3c4.4 0 8-3.5 8-8 0-1.9-.7-3.7-1.9-5.2L553.5 515l130.1-155c1.2-1.4 1.8-3.3 1.8-5.2z">
+                    </path>
+                    <path
+                      d="M512 65C264.6 65 64 265.6 64 513s200.6 448 448 448 448-200.6 448-448S759.4 65 512 65zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z">
+                    </path>
+                  </svg>
+                  error
+                </span>
+                <span class="badge"
+                  style="background: #fafafa; color: rgba(0, 0, 0, 0.88); border: 1px solid #d9d9d9; gap: 6px;">
+                  <svg viewBox="64 64 896 896" width="14" height="14" fill="currentColor">
+                    <path
+                      d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z">
+                    </path>
+                    <path
+                      d="M686.7 638.6L544.1 535.5V288c0-4.4-3.6-8-8-8H488c-4.4 0-8 3.6-8 8v275.4c0 2.6 1.2 5 3.3 6.5l165.4 120.6c3.6 2.6 8.6 1.8 11.2-1.8l28.6-39c2.6-3.7 1.8-8.7-1.8-11.1z">
+                    </path>
+                  </svg>
+                  default
+                </span>
+              </div>
+            </div>
+
+            <div>
+              <div class="text-muted fw-medium mb-3" style="font-size: 14px;">Status (solid)</div>
+              <div class="d-flex gap-2 align-items-center flex-wrap" style="text-transform: lowercase;">
+                <span class="badge badge-solid-green" style="gap: 6px;">
+                  <svg viewBox="64 64 896 896" width="14" height="14" fill="currentColor">
+                    <path
+                      d="M699 353h-46.9c-10.2 0-19.9 4.9-25.9 13.3L469 584.3l-71.2-98.8c-6-8.3-15.6-13.3-25.9-13.3H325c-6.5 0-10.3 7.4-6.5 12.7l124.6 172.8a31.8 31.8 0 0051.7 0l210.6-292c3.9-5.3.1-12.7-6.4-12.7z">
+                    </path>
+                    <path
+                      d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z">
+                    </path>
+                  </svg>
+                  success
+                </span>
+                <span class="badge badge-solid-blue" style="gap: 6px;">
+                  <svg class="icon-spin" viewBox="64 64 896 896" width="14" height="14" fill="currentColor">
+                    <path
+                      d="M168 504.2c1-43.7 10-86.1 26.9-126 17.3-41 42.1-77.7 73.7-109.4S337 212.3 378 195c42.4-17.9 87.4-27 133.9-27s91.5 9.1 133.8 27A341.5 341.5 0 01755 268.8c9.9 9.9 19.2 20.4 27.8 31.4l-60.2 47a8 8 0 003 14.1l175.7 43c5 1.2 9.9-2.6 9.9-7.7l.8-180.9c0-6.7-7.7-10.5-12.9-6.3l-56.4 44.1C765.8 155.1 646.2 92 511.8 92 282.7 92 96.3 275.6 92 503.8a8 8 0 008 8.2h60c4.4 0 8-3.6 8-7.8zm756 7.8h-60c-4.4 0-8 3.6-8 7.8-1 43.7-10 86.1-26.9 126-17.3 41-42.1 77.8-73.7 109.4A342.45 342.45 0 01512.1 856a342.24 342.24 0 01-243.2-100.8c-9.9-9.9-19.2-20.4-27.8-31.4l60.2-47a8 8 0 00-3-14.1l-175.7-43c-5-1.2-9.9 2.6-9.9 7.7l-.8 180.9c0 6.7 7.7 10.5 12.9 6.3l56.4-44.1C258.2 868.9 377.8 932 512.2 932c229.2 0 415.5-183.7 419.8-411.8a8 8 0 00-8-8.2z">
+                    </path>
+                  </svg>
+                  processing
+                </span>
+                <span class="badge badge-solid-gold" style="gap: 6px;">
+                  <svg viewBox="64 64 896 896" width="14" height="14" fill="currentColor">
+                    <path
+                      d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z">
+                    </path>
+                    <path
+                      d="M464 688a48 48 0 1096 0 48 48 0 10-96 0zm24-112h48c4.4 0 8-3.6 8-8V296c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8z">
+                    </path>
+                  </svg>
+                  warning
+                </span>
+                <span class="badge badge-solid-red" style="gap: 6px;">
+                  <svg viewBox="64 64 896 896" width="14" height="14" fill="currentColor">
+                    <path
+                      d="M685.4 354.8c0-4.4-3.6-8-8-8l-66 .3L512 465.6l-99.3-118.4-66-.3c-4.4 0-8 3.5-8 8 0 1.9.7 3.7 1.9 5.2l130.1 155L340.5 670a8.32 8.32 0 00-1.9 5.2c0 4.4 3.6 8 8 8l66-.3L512 564.4l99.3 118.4 66 .3c4.4 0 8-3.5 8-8 0-1.9-.7-3.7-1.9-5.2L553.5 515l130.1-155c1.2-1.4 1.8-3.3 1.8-5.2z">
+                    </path>
+                    <path
+                      d="M512 65C264.6 65 64 265.6 64 513s200.6 448 448 448 448-200.6 448-448S759.4 65 512 65zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z">
+                    </path>
+                  </svg>
+                  error
+                </span>
+                <span class="badge" style="background: #141414; color: #fff; border: 1px solid #141414; gap: 6px;">
+                  <svg viewBox="64 64 896 896" width="14" height="14" fill="currentColor">
+                    <path
+                      d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z">
+                    </path>
+                    <path
+                      d="M686.7 638.6L544.1 535.5V288c0-4.4-3.6-8-8-8H488c-4.4 0-8 3.6-8 8v275.4c0 2.6 1.2 5 3.3 6.5l165.4 120.6c3.6 2.6 8.6 1.8 11.2-1.8l28.6-39c2.6-3.7 1.8-8.7-1.8-11.1z">
+                    </path>
+                  </svg>
+                  default
+                </span>
+              </div>
+            </div>
+
+            <div>
+              <div class="text-muted fw-medium mb-3" style="font-size: 14px;">Status (outlined)</div>
+              <div class="d-flex gap-2 align-items-center flex-wrap" style="text-transform: lowercase;">
+                <span class="badge badge-outline-green" style="gap: 6px;">
+                  <svg viewBox="64 64 896 896" width="14" height="14" fill="currentColor">
+                    <path
+                      d="M699 353h-46.9c-10.2 0-19.9 4.9-25.9 13.3L469 584.3l-71.2-98.8c-6-8.3-15.6-13.3-25.9-13.3H325c-6.5 0-10.3 7.4-6.5 12.7l124.6 172.8a31.8 31.8 0 0051.7 0l210.6-292c3.9-5.3.1-12.7-6.4-12.7z">
+                    </path>
+                    <path
+                      d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z">
+                    </path>
+                  </svg>
+                  success
+                </span>
+                <span class="badge badge-outline-blue" style="gap: 6px;">
+                  <svg class="icon-spin" viewBox="64 64 896 896" width="14" height="14" fill="currentColor">
+                    <path
+                      d="M168 504.2c1-43.7 10-86.1 26.9-126 17.3-41 42.1-77.7 73.7-109.4S337 212.3 378 195c42.4-17.9 87.4-27 133.9-27s91.5 9.1 133.8 27A341.5 341.5 0 01755 268.8c9.9 9.9 19.2 20.4 27.8 31.4l-60.2 47a8 8 0 003 14.1l175.7 43c5 1.2 9.9-2.6 9.9-7.7l.8-180.9c0-6.7-7.7-10.5-12.9-6.3l-56.4 44.1C765.8 155.1 646.2 92 511.8 92 282.7 92 96.3 275.6 92 503.8a8 8 0 008 8.2h60c4.4 0 8-3.6 8-7.8zm756 7.8h-60c-4.4 0-8 3.6-8 7.8-1 43.7-10 86.1-26.9 126-17.3 41-42.1 77.8-73.7 109.4A342.45 342.45 0 01512.1 856a342.24 342.24 0 01-243.2-100.8c-9.9-9.9-19.2-20.4-27.8-31.4l60.2-47a8 8 0 00-3-14.1l-175.7-43c-5-1.2-9.9 2.6-9.9 7.7l-.8 180.9c0 6.7 7.7 10.5 12.9 6.3l56.4-44.1C258.2 868.9 377.8 932 512.2 932c229.2 0 415.5-183.7 419.8-411.8a8 8 0 00-8-8.2z">
+                    </path>
+                  </svg>
+                  processing
+                </span>
+                <span class="badge badge-outline-gold" style="gap: 6px;">
+                  <svg viewBox="64 64 896 896" width="14" height="14" fill="currentColor">
+                    <path
+                      d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z">
+                    </path>
+                    <path
+                      d="M464 688a48 48 0 1096 0 48 48 0 10-96 0zm24-112h48c4.4 0 8-3.6 8-8V296c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8z">
+                    </path>
+                  </svg>
+                  warning
+                </span>
+                <span class="badge badge-outline-red" style="gap: 6px;">
+                  <svg viewBox="64 64 896 896" width="14" height="14" fill="currentColor">
+                    <path
+                      d="M685.4 354.8c0-4.4-3.6-8-8-8l-66 .3L512 465.6l-99.3-118.4-66-.3c-4.4 0-8 3.5-8 8 0 1.9.7 3.7 1.9 5.2l130.1 155L340.5 670a8.32 8.32 0 00-1.9 5.2c0 4.4 3.6 8 8 8l66-.3L512 564.4l99.3 118.4 66 .3c4.4 0 8-3.5 8-8 0-1.9-.7-3.7-1.9-5.2L553.5 515l130.1-155c1.2-1.4 1.8-3.3 1.8-5.2z">
+                    </path>
+                    <path
+                      d="M512 65C264.6 65 64 265.6 64 513s200.6 448 448 448 448-200.6 448-448S759.4 65 512 65zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z">
+                    </path>
+                  </svg>
+                  error
+                </span>
+                <span class="badge"
+                  style="background: #fff; color: rgba(0, 0, 0, 0.88); border: 1px solid #d9d9d9; gap: 6px;">
+                  <svg viewBox="64 64 896 896" width="14" height="14" fill="currentColor">
+                    <path
+                      d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z">
+                    </path>
+                    <path
+                      d="M686.7 638.6L544.1 535.5V288c0-4.4-3.6-8-8-8H488c-4.4 0-8 3.6-8 8v275.4c0 2.6 1.2 5 3.3 6.5l165.4 120.6c3.6 2.6 8.6 1.8 11.2-1.8l28.6-39c2.6-3.7 1.8-8.7-1.8-11.1z">
+                    </path>
+                  </svg>
+                  default
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="ds-component-code">
+          <div class="ds-component-code-header">
+            <span class="ds-component-code-lang">HTML</span>
+          </div>
+          <pre id="badge-status-tags"><code><span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"d-flex gap-2 flex-wrap"</span> <span class="token-attr">style</span>=<span class="token-value">"text-transform: lowercase;"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge badge-filled-green"</span><span class="token-tag">&gt;</span>
+    <span class="token-tag">&lt;svg</span> <span class="token-attr">viewBox</span>=<span class="token-value">"64 64 896 896"</span> <span class="token-attr">width</span>=<span class="token-value">"14"</span> <span class="token-attr">height</span>=<span class="token-value">"14"</span> <span class="token-attr">fill</span>=<span class="token-value">"currentColor"</span><span class="token-tag">&gt;</span><span class="token-tag">&lt;path</span> <span class="token-attr">d</span>=<span class="token-value">"M699 353h-46.9c-10.2 0-19.9 4.9-25.9 13.3L469 584.3l-71.2-98.8c-6-8.3-15.6-13.3-25.9-13.3H325c-6.5 0-10.3 7.4-6.5 12.7l124.6 172.8a31.8 31.8 0 0051.7 0l210.6-292c3.9-5.3.1-12.7-6.4-12.7z"</span><span class="token-tag">&gt;&lt;/path&gt;&lt;path</span> <span class="token-attr">d</span>=<span class="token-value">"M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"</span><span class="token-tag">&gt;&lt;/path&gt;&lt;/svg&gt;</span>
+    success
+  <span class="token-tag">&lt;/span&gt;</span>
+  <span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge badge-filled-blue"</span><span class="token-tag">&gt;</span>
+    <span class="token-tag">&lt;svg</span> <span class="token-attr">class</span>=<span class="token-value">"icon-spin"</span> <span class="token-attr">viewBox</span>=<span class="token-value">"64 64 896 896"</span> <span class="token-attr">width</span>=<span class="token-value">"14"</span> <span class="token-attr">height</span>=<span class="token-value">"14"</span> <span class="token-attr">fill</span>=<span class="token-value">"currentColor"</span><span class="token-tag">&gt;</span><span class="token-tag">&lt;path</span> <span class="token-attr">d</span>=<span class="token-value">"M168 504.2c1-43.7 10-86.1 26.9-126 17.3-41 42.1-77.7 73.7-109.4S337 212.3 378 195c42.4-17.9 87.4-27 133.9-27s91.5 9.1 133.8 27A341.5 341.5 0 01755 268.8c9.9 9.9 19.2 20.4 27.8 31.4l-60.2 47a8 8 0 003 14.1l175.7 43c5 1.2 9.9-2.6 9.9-7.7l.8-180.9c0-6.7-7.7-10.5-12.9-6.3l-56.4 44.1C765.8 155.1 646.2 92 511.8 92 282.7 92 96.3 275.6 92 503.8a8 8 0 008 8.2h60c4.4 0 8-3.6 8-7.8zm756 7.8h-60c-4.4 0-8 3.6-8 7.8-1 43.7-10 86.1-26.9 126-17.3 41-42.1 77.8-73.7 109.4A342.45 342.45 0 01512.1 856a342.24 342.24 0 01-243.2-100.8c-9.9-9.9-19.2-20.4-27.8-31.4l60.2-47a8 8 0 00-3-14.1l-175.7-43c-5-1.2-9.9 2.6-9.9 7.7l-.8 180.9c0 6.7 7.7 10.5 12.9 6.3l56.4-44.1C258.2 868.9 377.8 932 512.2 932c229.2 0 415.5-183.7 419.8-411.8a8 8 0 00-8-8.2z"</span><span class="token-tag">&gt;&lt;/path&gt;&lt;/svg&gt;</span>
+    processing
+  <span class="token-tag">&lt;/span&gt;</span>
+<span class="token-tag">&lt;/div&gt;</span></code></pre>
+        </div>
+      </div>
+
+      <!-- Icon Tags -->
+      <div class="ds-component">
+        <div class="ds-component-header">
+          <span class="ds-component-title">Icon Tags & Checkable</span>
+          <button class="btn-copy" onclick="copyCode('badge-icon-tags')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+            Copy
+          </button>
+        </div>
+
+        <div class="ds-component-preview">
+          <div class="d-flex flex-column gap-4 angular-variant">
+
+            <div>
+              <div class="text-muted fw-medium mb-3" style="font-size: 14px;">Tag with icon</div>
+              <div class="d-flex gap-2 align-items-center flex-wrap"
+                style="text-transform: uppercase; font-size: 12px; font-weight: 500;">
+                <span class="badge"
+                  style="background: rgba(85, 172, 238, 0.1); color: #55acee; border: 1px solid rgba(85, 172, 238, 0.3); gap: 6px;">
+                  <svg viewBox="64 64 896 896" width="14" height="14" fill="currentColor">
+                    <path
+                      d="M925.3 265.2c-29.7 13.2-61.7 22.1-95.2 26.1 34.3-20.6 60.7-53.3 73.1-92.3-32.1 19-67.6 32.8-105 40.2-30.3-32.3-73.5-52.5-121.3-52.5-91.8 0-166.2 74.4-166.2 166.2 0 13 .1 25.7 4.3 37.8-138.2-6.9-260.6-73.1-342.8-173.8-14.3 24.6-22.5 53.2-22.5 83.7 0 57.6 29.3 108.5 73.9 138.3-27.1-.9-52.7-8.3-75.1-20.7v2.1c0 80.4 57.2 147.5 133.1 162.7-14 3.8-28.7 5.8-43.9 5.8-10.7 0-21.1-1-31.3-3 21.1 65.9 82.4 113.9 155 115.2-56.8 44.5-128.4 71.1-206.2 71.1-13.4 0-26.6-.8-39.6-2.4 73.5 47.1 160.7 74.6 254.4 74.6 305.3 0 472.3-253 472.3-472.3 0-7.2-.2-14.3-.5-21.4 32.5-23.4 60.6-52.6 82.8-85.3z">
+                    </path>
+                  </svg>
+                  Twitter
+                </span>
+                <span class="badge"
+                  style="background: rgba(205, 32, 31, 0.1); color: #cd201f; border: 1px solid rgba(205, 32, 31, 0.3); gap: 6px;">
+                  <svg viewBox="64 64 896 896" width="14" height="14" fill="currentColor">
+                    <path
+                      d="M941.3 296.1a112.3 112.3 0 00-79.2-79.3C792.2 198 512 198 512 198s-280.2 0-350.1 18.7A112.12 112.12 0 0082.7 296C64 366 64 512 64 512s0 146 18.7 215.9c10.3 38.6 40.7 69 79.2 79.3C231.8 826 512 826 512 826s280.2 0 350.1-18.8c38.6-10.3 68.9-40.7 79.2-79.3C960 658 960 512 960 512s0-146-18.7-215.9zM423 646V378l232 133-232 135z">
+                    </path>
+                  </svg>
+                  Youtube
+                </span>
+                <span class="badge"
+                  style="background: rgba(59, 89, 153, 0.1); color: #3b5999; border: 1px solid rgba(59, 89, 153, 0.3); gap: 6px;">
+                  <svg viewBox="64 64 896 896" width="14" height="14" fill="currentColor">
+                    <path
+                      d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-38.4 736H182.4V182.4h660.8v665.6zm-286-554.9c-85 0-143.1 51.8-143.1 147.2v82.2h-96.1v111.4h96.1v310.2h114.9V497.9h96l14.4-111.4h-110.4v-71.1c0-32.2 8.9-54.2 55.2-54.2h59V157.6c-10.2-1.4-45.2-4.4-85.9-4.4z">
+                    </path>
+                  </svg>
+                  Facebook
+                </span>
+                <span class="badge"
+                  style="background: rgba(85, 172, 238, 0.1); color: #55acee; border: 1px solid rgba(85, 172, 238, 0.3); gap: 6px;">
+                  <svg viewBox="64 64 896 896" width="14" height="14" fill="currentColor">
+                    <path
+                      d="M847.7 112H176.3c-35.5 0-64.3 28.8-64.3 64.3v671.4c0 35.5 28.8 64.3 64.3 64.3h671.4c35.5 0 64.3-28.8 64.3-64.3V176.3c0-35.5-28.8-64.3-64.3-64.3zM380 816H264V420h116v396zM322 366.6c-38.3 0-69.3-31-69.3-69.3s31-69.3 69.3-69.3 69.3 31 69.3 69.3-31 69.3-69.3 69.3zm494 449.4H700V626.8c0-45.1-.9-103.1-62.8-103.1-62.9 0-72.5 49.2-72.5 99.8V816H448.7V420h111.4v54.2h1.6c15.5-29.3 53.3-60.2 109.7-60.2 117.3 0 138.9 77.2 138.9 177.6V816z">
+                    </path>
+                  </svg>
+                  LinkedIn
+                </span>
+              </div>
+            </div>
+
+            <div>
+              <div class="text-muted fw-medium mb-3" style="font-size: 14px;">CheckableTag with icon</div>
+              <div class="d-flex gap-2 align-items-center flex-wrap"
+                style="text-transform: uppercase; font-size: 12px; font-weight: 500;">
+
+                <span class="badge badge-checkable badge-solid-blue" style="gap: 6px;">
+                  <svg viewBox="64 64 896 896" width="14" height="14" fill="currentColor">
+                    <path
+                      d="M925.3 265.2c-29.7 13.2-61.7 22.1-95.2 26.1 34.3-20.6 60.7-53.3 73.1-92.3-32.1 19-67.6 32.8-105 40.2-30.3-32.3-73.5-52.5-121.3-52.5-91.8 0-166.2 74.4-166.2 166.2 0 13 .1 25.7 4.3 37.8-138.2-6.9-260.6-73.1-342.8-173.8-14.3 24.6-22.5 53.2-22.5 83.7 0 57.6 29.3 108.5 73.9 138.3-27.1-.9-52.7-8.3-75.1-20.7v2.1c0 80.4 57.2 147.5 133.1 162.7-14 3.8-28.7 5.8-43.9 5.8-10.7 0-21.1-1-31.3-3 21.1 65.9 82.4 113.9 155 115.2-56.8 44.5-128.4 71.1-206.2 71.1-13.4 0-26.6-.8-39.6-2.4 73.5 47.1 160.7 74.6 254.4 74.6 305.3 0 472.3-253 472.3-472.3 0-7.2-.2-14.3-.5-21.4 32.5-23.4 60.6-52.6 82.8-85.3z">
+                    </path>
+                  </svg>
+                  Twitter
+                </span>
+
+                <span class="badge badge-checkable" style="gap: 6px;">
+                  <svg viewBox="64 64 896 896" width="14" height="14" fill="currentColor">
+                    <path
+                      d="M941.3 296.1a112.3 112.3 0 00-79.2-79.3C792.2 198 512 198 512 198s-280.2 0-350.1 18.7A112.12 112.12 0 0082.7 296C64 366 64 512 64 512s0 146 18.7 215.9c10.3 38.6 40.7 69 79.2 79.3C231.8 826 512 826 512 826s280.2 0 350.1-18.8c38.6-10.3 68.9-40.7 79.2-79.3C960 658 960 512 960 512s0-146-18.7-215.9zM423 646V378l232 133-232 135z">
+                    </path>
+                  </svg>
+                  Youtube
+                </span>
+
+                <span class="badge badge-checkable" style="gap: 6px;">
+                  <svg viewBox="64 64 896 896" width="14" height="14" fill="currentColor">
+                    <path
+                      d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-38.4 736H182.4V182.4h660.8v665.6zm-286-554.9c-85 0-143.1 51.8-143.1 147.2v82.2h-96.1v111.4h96.1v310.2h114.9V497.9h96l14.4-111.4h-110.4v-71.1c0-32.2 8.9-54.2 55.2-54.2h59V157.6c-10.2-1.4-45.2-4.4-85.9-4.4z">
+                    </path>
+                  </svg>
+                  Facebook
+                </span>
+
+                <span class="badge badge-checkable" style="gap: 6px;">
+                  <svg viewBox="64 64 896 896" width="14" height="14" fill="currentColor">
+                    <path
+                      d="M847.7 112H176.3c-35.5 0-64.3 28.8-64.3 64.3v671.4c0 35.5 28.8 64.3 64.3 64.3h671.4c35.5 0 64.3-28.8 64.3-64.3V176.3c0-35.5-28.8-64.3-64.3-64.3zM380 816H264V420h116v396zM322 366.6c-38.3 0-69.3-31-69.3-69.3s31-69.3 69.3-69.3 69.3 31 69.3 69.3-31 69.3-69.3 69.3zm494 449.4H700V626.8c0-45.1-.9-103.1-62.8-103.1-62.9 0-72.5 49.2-72.5 99.8V816H448.7V420h111.4v54.2h1.6c15.5-29.3 53.3-60.2 109.7-60.2 117.3 0 138.9 77.2 138.9 177.6V816z">
+                    </path>
+                  </svg>
+                  LinkedIn
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="ds-component-code">
+          <div class="ds-component-code-header">
+            <span class="ds-component-code-lang">HTML</span>
+          </div>
+          <pre id="badge-icon-tags"><code><span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"d-flex gap-2 flex-wrap"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge"</span> <span class="token-attr">style</span>=<span class="token-value">"background: rgba(85, 172, 238, 0.1); color: #55acee; border: 1px solid rgba(85, 172, 238, 0.3); gap: 6px;"</span><span class="token-tag">&gt;</span>
+    <span class="token-tag">&lt;svg</span> <span class="token-attr">viewBox</span>=<span class="token-value">"64 64 896 896"</span> <span class="token-attr">width</span>=<span class="token-value">"14"</span> <span class="token-attr">height</span>=<span class="token-value">"14"</span> <span class="token-attr">fill</span>=<span class="token-value">"currentColor"</span><span class="token-tag">&gt;</span>...<span class="token-tag">&lt;/svg&gt;</span>
+    Twitter
+  <span class="token-tag">&lt;/span&gt;</span>
+
+  <span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge badge-checkable badge-solid-blue"</span><span class="token-tag">&gt;</span>
+    <span class="token-tag">&lt;svg</span> <span class="token-attr">viewBox</span>=<span class="token-value">"64 64 896 896"</span> <span class="token-attr">width</span>=<span class="token-value">"14"</span> <span class="token-attr">height</span>=<span class="token-value">"14"</span> <span class="token-attr">fill</span>=<span class="token-value">"currentColor"</span><span class="token-tag">&gt;</span>...<span class="token-tag">&lt;/svg&gt;</span>
+    Twitter (Checked)
+  <span class="token-tag">&lt;/span&gt;</span>
+
+  <span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge badge-checkable"</span><span class="token-tag">&gt;</span>
+    <span class="token-tag">&lt;svg</span> <span class="token-attr">viewBox</span>=<span class="token-value">"64 64 896 896"</span> <span class="token-attr">width</span>=<span class="token-value">"14"</span> <span class="token-attr">height</span>=<span class="token-value">"14"</span> <span class="token-attr">fill</span>=<span class="token-value">"currentColor"</span><span class="token-tag">&gt;</span>...<span class="token-tag">&lt;/svg&gt;</span>
+    Youtube (Unchecked)
+  <span class="token-tag">&lt;/span&gt;</span>
+<span class="token-tag">&lt;/div&gt;</span></code></pre>
+        </div>
+      </div>
+
+      <!-- Status Badges Section -->
+      <div class="ds-component">
+        <div class="ds-component-header">
+          <span class="ds-component-title">Status Badges</span>
+          <button class="btn-copy" onclick="copyCode('badge-status')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+            Copy
+          </button>
+        </div>
+
+        <div class="ds-component-preview">
+          <div class="preview-row" style="gap: 16px; margin-bottom: 24px;">
+            <span class="badge-status-dot badge-dot-success-static"></span>
+            <span class="badge-status-dot badge-dot-error-static"></span>
+            <span class="badge-status-dot badge-dot-default-static"></span>
+            <span class="badge-status-dot badge-dot-processing-active"></span>
+            <span class="badge-status-dot badge-dot-warning-static"></span>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="badge-status-item"><span class="badge-status-dot badge-dot-success-static"></span> Success
+            </div>
+            <div class="badge-status-item"><span class="badge-status-dot badge-dot-error-static"></span> Error</div>
+            <div class="badge-status-item"><span class="badge-status-dot badge-dot-default-static"></span> Default
+            </div>
+            <div class="badge-status-item">
+              <span class="badge-status-dot badge-dot-processing-active"></span> Processing
+            </div>
+            <div class="badge-status-item"><span class="badge-status-dot badge-dot-warning-static"></span> Warning
+            </div>
+          </div>
+        </div>
+
+        <div class="ds-component-code">
+          <div class="ds-component-code-header">
+            <span class="ds-component-code-lang">HTML</span>
+          </div>
+          <pre id="badge-status"><code><span class="token-tag">&lt;!-- แบบจุดอย่างเดียว --&gt;</span>
+<span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge-status-dot badge-dot-success-static"</span><span class="token-tag">&gt;&lt;/span&gt;</span>
+<span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge-status-dot badge-dot-processing-active"</span><span class="token-tag">&gt;&lt;/span&gt;</span>
+
+<span class="token-tag">&lt;!-- แบบจุดพร้อมข้อความ --&gt;</span>
+<span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"badge-status-item"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge-status-dot badge-dot-success-static"</span><span class="token-tag">&gt;&lt;/span&gt;</span> Success
+<span class="token-tag">&lt;/div&gt;</span>
+
+<span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"badge-status-item"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge-status-dot badge-dot-processing-active"</span><span class="token-tag">&gt;&lt;/span&gt;</span> Processing
+<span class="token-tag">&lt;/div&gt;</span></code></pre>
+        </div>
+      </div>
+
+      <!-- Colored Badges Section -->
+      <div class="ds-component">
+        <div class="ds-component-header">
+          <span class="ds-component-title">Colorful Badges</span>
+          <button class="btn-copy" onclick="copyCode('badge-colors')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+            Copy
+          </button>
+        </div>
+
+        <div class="ds-component-preview">
+          <div style="margin-bottom: 16px; font-weight: 500; color: rgba(0, 0, 0, 0.45); font-size: 14px;">Presets
+          </div>
+          <div class="preview-row" style="display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 32px;">
+            <div class="badge-status-item"><span class="badge-status-dot badge-dot-pink"></span> pink</div>
+            <div class="badge-status-item"><span class="badge-status-dot badge-dot-red"></span> red</div>
+            <div class="badge-status-item"><span class="badge-status-dot badge-dot-yellow"></span> yellow</div>
+            <div class="badge-status-item"><span class="badge-status-dot badge-dot-orange"></span> orange</div>
+            <div class="badge-status-item"><span class="badge-status-dot badge-dot-cyan"></span> cyan</div>
+            <div class="badge-status-item"><span class="badge-status-dot badge-dot-green"></span> green</div>
+            <div class="badge-status-item"><span class="badge-status-dot badge-dot-blue"></span> blue</div>
+            <div class="badge-status-item"><span class="badge-status-dot badge-dot-purple"></span> purple</div>
+            <div class="badge-status-item"><span class="badge-status-dot badge-dot-geekblue"></span> geekblue</div>
+            <div class="badge-status-item"><span class="badge-status-dot badge-dot-magenta"></span> magenta</div>
+            <div class="badge-status-item"><span class="badge-status-dot badge-dot-volcano"></span> volcano</div>
+            <div class="badge-status-item"><span class="badge-status-dot badge-dot-gold"></span> gold</div>
+            <div class="badge-status-item"><span class="badge-status-dot badge-dot-lime"></span> lime</div>
+          </div>
+
+          <div style="margin-bottom: 16px; font-weight: 500; color: rgba(0, 0, 0, 0.45); font-size: 14px;">Custom
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="badge-status-item"><span class="badge-status-dot" style="background-color: #f50;"></span> #f50
+            </div>
+            <div class="badge-status-item"><span class="badge-status-dot"
+                style="background-color: rgb(45, 183, 245);"></span> rgb(45, 183, 245)</div>
+            <div class="badge-status-item"><span class="badge-status-dot"
+                style="background-color: hsl(102, 53%, 61%);"></span> hsl(102, 53%, 61%)</div>
+            <div class="badge-status-item"><span class="badge-status-dot"
+                style="background-color: hwb(205 6% 9%);"></span> hwb(205 6% 9%)</div>
+          </div>
+        </div>
+
+        <div class="ds-component-code">
+          <div class="ds-component-code-header">
+            <span class="ds-component-code-lang">HTML</span>
+          </div>
+          <pre id="badge-colors"><code><span class="token-tag">&lt;!-- Preset Colors --&gt;</span>
+<span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"badge-status-item"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge-status-dot badge-dot-pink"</span><span class="token-tag">&gt;&lt;/span&gt;</span>
+  <span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge-status-text"</span><span class="token-tag">&gt;</span>pink<span class="token-tag">&lt;/span&gt;</span>
+<span class="token-tag">&lt;/div&gt;</span>
+
+<span class="token-tag">&lt;!-- Custom Colors --&gt;</span>
+<span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"badge-status-item"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge-status-dot"</span> <span class="token-attr">style</span>=<span class="token-value">"background-color: #f50;"</span><span class="token-tag">&gt;&lt;/span&gt;</span>
+  <span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge-status-text"</span><span class="token-tag">&gt;</span>#f50<span class="token-tag">&lt;/span&gt;</span>
+<span class="token-tag">&lt;/div&gt;</span>
+
+<span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"badge-status-item"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge-status-dot"</span> <span class="token-attr">style</span>=<span class="token-value">"background-color: rgb(45, 183, 245);"</span><span class="token-tag">&gt;&lt;/span&gt;</span>
+  <span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge-status-text"</span><span class="token-tag">&gt;</span>rgb(45, 183, 245)<span class="token-tag">&lt;/span&gt;</span>
+<span class="token-tag">&lt;/div&gt;</span></code></pre>
+        </div>
+      </div>
+
+      <!-- Overflow Count Badges Section -->
+      <div class="ds-component">
+        <div class="ds-component-header">
+          <span class="ds-component-title">Overflow Count</span>
+          <button class="btn-copy" onclick="copyCode('badge-overflow')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+            Copy
+          </button>
+        </div>
+        <div class="ds-component-preview">
+          <div class="preview-row" style="gap: 32px; padding: 20px;">
+            <!-- ตัวอย่างที่ 1: 99 -->
+            <div class="badge-wrapper">
+              <div class="avatar-placeholder"></div>
+              <span class="badge badge-error count-tag">99</span>
+            </div>
+
+            <!-- ตัวอย่างที่ 2: 99+ -->
+            <div class="badge-wrapper">
+              <div class="avatar-placeholder"></div>
+              <span class="badge badge-error count-tag">99+</span>
+            </div>
+
+            <!-- ตัวอย่างที่ 3: 10+ -->
+            <div class="badge-wrapper">
+              <div class="avatar-placeholder"></div>
+              <span class="badge badge-error count-tag">10+</span>
+            </div>
+
+            <!-- ตัวอย่างที่ 4: 999+ -->
+            <div class="badge-wrapper">
+              <div class="avatar-placeholder"></div>
+              <span class="badge badge-error count-tag">999+</span>
+            </div>
+          </div>
+        </div>
+        <div class="ds-component-code">
+          <div class="ds-component-code-header">
+            <span class="ds-component-code-lang">HTML</span>
+          </div>
+          <pre id="badge-overflow"><code><span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"badge-wrapper"</span><span class="token-tag">&gt;</span>
   <span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"avatar-placeholder"</span><span class="token-tag">&gt;&lt;/div&gt;</span>
   <span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge badge-error count-tag"</span><span class="token-tag">&gt;</span>99<span class="token-tag">&lt;/span&gt;</span>
 <span class="token-tag">&lt;/div&gt;</span>
 
-<span class="token-tag">&lt;!-- ตัวอย่างที่ 2: 99+ --&gt;</span>
 <span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"badge-wrapper"</span><span class="token-tag">&gt;</span>
   <span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"avatar-placeholder"</span><span class="token-tag">&gt;&lt;/div&gt;</span>
   <span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge badge-error count-tag"</span><span class="token-tag">&gt;</span>99+<span class="token-tag">&lt;/span&gt;</span>
 <span class="token-tag">&lt;/div&gt;</span>
-
-<span class="token-tag">&lt;!-- ตัวอย่างที่ 3: 10+ --&gt;</span>
-<span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"badge-wrapper"</span><span class="token-tag">&gt;</span>
-  <span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"avatar-placeholder"</span><span class="token-tag">&gt;&lt;/div&gt;</span>
-  <span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge badge-error count-tag"</span><span class="token-tag">&gt;</span>10+<span class="token-tag">&lt;/span&gt;</span>
-<span class="token-tag">&lt;/div&gt;</span>
-
-<span class="token-tag">&lt;!-- ตัวอย่างที่ 4: 999+ --&gt;</span>
-<span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"badge-wrapper"</span><span class="token-tag">&gt;</span>
-  <span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"avatar-placeholder"</span><span class="token-tag">&gt;&lt;/div&gt;</span>
-  <span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge badge-error count-tag"</span><span class="token-tag">&gt;</span>999+<span class="token-tag">&lt;/span&gt;</span>
-<span class="token-tag">&lt;/div&gt;</span></code></pre>
+</code></pre>
+        </div>
       </div>
-    </div>
 
-    <div class="ds-component">
-      <div class="ds-component-header">
-        <span class="ds-component-title">Standalone Badges</span>
-        <button class="btn-copy" onclick="copyCode('badge-standalone')">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <rect x="9" y="9" width="13" height="13" rx="2" />
-            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
-          </svg>
-          Copy
-        </button>
-      </div>
-      <div class="ds-component-preview">
-        <div class="preview-row" style="gap: 16px; align-items: center; padding: 20px;">
-
-          <button type="button" class="ant-switch ant-switch-checked" id="badgeToggle" onclick="toggleBadgeValues()">
-            <div class="ant-switch-handle"></div>
-            <span class="ant-switch-inner"></span>
+      <div class="ds-component">
+        <div class="ds-component-header">
+          <span class="ds-component-title">Standalone Badges</span>
+          <button class="btn-copy" onclick="copyCode('badge-standalone')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+            Copy
           </button>
+        </div>
+        <div class="ds-component-preview">
+          <div class="preview-row" style="gap: 16px; align-items: center; padding: 20px;">
 
-          <!-- กลุ่ม Badge -->
-          <div style="display: flex; gap: 16px; align-items: center;">
-            <span id="count-warning" class="badge standalone-badge" style="background-color: #faad14;">11</span>
-            <span id="count-error" class="badge standalone-badge" style="background-color: #ff4d4f;">25</span>
-            <span id="count-icon" style="color: #ff4d4f; display: inline-flex; align-items: center;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg>
-            </span>
+            <button type="button" class="ant-switch ant-switch-checked" id="badgeToggle" onclick="toggleBadgeValues()">
+              <div class="ant-switch-handle"></div>
+              <span class="ant-switch-inner"></span>
+            </button>
 
-            <span id="count-success" class="badge standalone-badge" style="background-color: #52c41a;">99+</span>
+            <!-- กลุ่ม Badge -->
+            <div style="display: flex; gap: 16px; align-items: center;">
+              <span id="count-warning" class="badge standalone-badge" style="background-color: #faad14;">11</span>
+              <span id="count-error" class="badge standalone-badge" style="background-color: #ff4d4f;">25</span>
+              <span id="count-icon" style="color: #ff4d4f; display: inline-flex; align-items: center;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </span>
+
+              <span id="count-success" class="badge standalone-badge" style="background-color: #52c41a;">99+</span>
+            </div>
+
           </div>
-
         </div>
-      </div>
 
-      <div class="ds-component-code">
-        <div class="ds-component-code-header">
-          <span class="ds-component-code-lang">HTML</span>
-        </div>
-        <pre
-          id="badge-standalone"><code><span class="token-tag">&lt;!-- Switch สำหรับควบคุม --&gt;</span>
-<span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"ant-switch ant-switch-checked"</span> <span class="token-attr">onclick</span>=<span class="token-value">"toggleBadgeValues()"</span><span class="token-tag">&gt;</span>...<span class="token-tag">&lt;/button&gt;</span>
+        <div class="ds-component-code">
+          <div class="ds-component-code-header">
+            <span class="ds-component-code-lang">HTML</span>
+          </div>
+          <pre
+            id="badge-standalone"><code><span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"ant-switch ant-switch-checked"</span> <span class="token-attr">onclick</span>=<span class="token-value">"toggleBadgeValues()"</span><span class="token-tag">&gt;</span>...<span class="token-tag">&lt;/button&gt;</span>
 
-<span class="token-tag">&lt;!-- รายการ Badge --&gt;</span>
 <span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge"</span> <span class="token-attr">style</span>=<span class="token-value">"background-color: #faad14;"</span><span class="token-tag">&gt;</span>11<span class="token-tag">&lt;/span&gt;</span>
 <span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge"</span> <span class="token-attr">style</span>=<span class="token-value">"background-color: #ff4d4f;"</span><span class="token-tag">&gt;</span>25<span class="token-tag">&lt;/span&gt;</span>
 <span class="token-tag">&lt;span</span> <span class="token-attr">class</span>=<span class="token-value">"badge"</span> <span class="token-attr">style</span>=<span class="token-value">"background-color: #52c41a;"</span><span class="token-tag">&gt;</span>99+<span class="token-tag">&lt;/span&gt;</span></code></pre>
+        </div>
       </div>
-    </div>
 
-    <!-- Footer -->
-    <div class="divider-fancy">
-      <span class="divider-fancy-text">SUTH Design System v2.0.0</span>
-    </div>
 
-    <footer style="text-align: center; padding: 40px 0; color: var(--text-muted);">
-      <p style="margin-bottom: 8px;">© 2024 Suranaree University of Technology Hospital</p>
-      <p style="font-size: 0.8125rem;">Built with care for healthcare professionals</p>
-    </footer>
+      <!-- Ribbon Badges -->
+      <div class="ds-component">
+        <div class="ds-component-header">
+          <span class="ds-component-title">Ribbon Badges</span>
+          <button class="btn-copy" onclick="copyCode('badge-ribbons')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+            Copy
+          </button>
+        </div>
 
-    <script>
+        <div class="ds-component-preview">
+          <div style="display: flex; flex-wrap: wrap; gap: 24px 16px;">
 
-      // ประกาศให้เป็น Global ไว้ชั่วคราว
-      window.toggleBadgeValues = function () {
-        const switchBtn = document.getElementById('badgeToggle');
-        if (!switchBtn) return;
+            <div class="badge-ribbon-wrapper">
+              <div class="badge-ribbon badge-ribbon-blue">Hippies</div>
+              <div class="badge-ribbon-card">
+                <div class="badge-ribbon-card-title">Pushes open the window</div>
+                <div class="badge-ribbon-card-body">and raises the spyglass.</div>
+              </div>
+            </div>
 
-        const isChecked = switchBtn.classList.toggle('ant-switch-checked');
-        const warning = document.getElementById('count-warning');
-        const error = document.getElementById('count-error');
-        const icon = document.getElementById('count-icon');
-        const success = document.getElementById('count-success');
+            <div class="badge-ribbon-wrapper">
+              <div class="badge-ribbon badge-ribbon-pink">Hippies</div>
+              <div class="badge-ribbon-card">
+                <div class="badge-ribbon-card-title">Pushes open the window</div>
+                <div class="badge-ribbon-card-body">and raises the spyglass.</div>
+              </div>
+            </div>
 
-        if (isChecked) {
-          if (warning) warning.textContent = '11';
-          if (error) error.style.display = 'inline-flex';
-          if (icon) icon.style.display = 'inline-flex';
-          if (success) success.style.display = 'inline-flex';
-        } else {
-          if (warning) warning.textContent = '0';
-          if (error) error.style.display = 'none';
-          if (icon) icon.style.display = 'none';
-          if (success) success.style.display = 'none';
-        }
-      };
-    </script>
+            <div class="badge-ribbon-wrapper">
+              <div class="badge-ribbon badge-ribbon-red">Hippies</div>
+              <div class="badge-ribbon-card">
+                <div class="badge-ribbon-card-title">Pushes open the window</div>
+                <div class="badge-ribbon-card-body">and raises the spyglass.</div>
+              </div>
+            </div>
+
+            <div class="badge-ribbon-wrapper">
+              <div class="badge-ribbon badge-ribbon-cyan">Hippies</div>
+              <div class="badge-ribbon-card">
+                <div class="badge-ribbon-card-title">Pushes open the window</div>
+                <div class="badge-ribbon-card-body">and raises the spyglass.</div>
+              </div>
+            </div>
+
+            <div class="badge-ribbon-wrapper">
+              <div class="badge-ribbon badge-ribbon-green">Hippies</div>
+              <div class="badge-ribbon-card">
+                <div class="badge-ribbon-card-title">Pushes open the window</div>
+                <div class="badge-ribbon-card-body">and raises the spyglass.</div>
+              </div>
+            </div>
+
+            <div class="badge-ribbon-wrapper">
+              <div class="badge-ribbon badge-ribbon-purple">Hippies</div>
+              <div class="badge-ribbon-card">
+                <div class="badge-ribbon-card-title">Pushes open the window</div>
+                <div class="badge-ribbon-card-body">and raises the spyglass.</div>
+              </div>
+            </div>
+
+            <div class="badge-ribbon-wrapper">
+              <div class="badge-ribbon badge-ribbon-volcano">Hippies</div>
+              <div class="badge-ribbon-card">
+                <div class="badge-ribbon-card-title">Pushes open the window</div>
+                <div class="badge-ribbon-card-body">and raises the spyglass.</div>
+              </div>
+            </div>
+
+            <div class="badge-ribbon-wrapper">
+              <div class="badge-ribbon badge-ribbon-magenta">Hippies</div>
+              <div class="badge-ribbon-card">
+                <div class="badge-ribbon-card-title">Pushes open the window</div>
+                <div class="badge-ribbon-card-body">and raises the spyglass.</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="ds-component-code">
+          <div class="ds-component-code-header">
+            <span class="ds-component-code-lang">HTML</span>
+          </div>
+          <pre id="badge-ribbons"><code><span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"badge-ribbon-wrapper"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"badge-ribbon badge-ribbon-blue"</span><span class="token-tag">&gt;</span>Hippies<span class="token-tag">&lt;/div&gt;</span>
+  <span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"badge-ribbon-card"</span><span class="token-tag">&gt;</span>
+    <span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"badge-ribbon-card-title"</span><span class="token-tag">&gt;</span>Pushes open the window<span class="token-tag">&lt;/div&gt;</span>
+    <span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"badge-ribbon-card-body"</span><span class="token-tag">&gt;</span>and raises the spyglass.<span class="token-tag">&lt;/div&gt;</span>
+  <span class="token-tag">&lt;/div&gt;</span>
+<span class="token-tag">&lt;/div&gt;</span>
+
+<span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"badge-ribbon-wrapper"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"badge-ribbon badge-ribbon-pink"</span><span class="token-tag">&gt;</span>Hippies<span class="token-tag">&lt;/div&gt;</span>
+  <span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"badge-ribbon-card"</span><span class="token-tag">&gt;</span>
+    <span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"badge-ribbon-card-title"</span><span class="token-tag">&gt;</span>Pushes open the window<span class="token-tag">&lt;/div&gt;</span>
+    <span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"badge-ribbon-card-body"</span><span class="token-tag">&gt;</span>and raises the spyglass.<span class="token-tag">&lt;/div&gt;</span>
+  <span class="token-tag">&lt;/div&gt;</span>
+<span class="token-tag">&lt;/div&gt;</span>
+</code></pre>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="divider-fancy">
+        <span class="divider-fancy-text">SUTH Design System v2.0.0</span>
+      </div>
+
+      <footer style="text-align: center; padding: 40px 0; color: var(--text-muted);">
+        <p style="margin-bottom: 8px;">© 2024 Suranaree University of Technology Hospital</p>
+        <p style="font-size: 0.8125rem;">Built with care for healthcare professionals</p>
+      </footer>
+
 
   </main>
   </div>
