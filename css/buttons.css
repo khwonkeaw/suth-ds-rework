@@ -1,5 +1,5 @@
 /* ========================================
-   COPY BUTTON
+   1. COPY BUTTON
    ======================================== */
 .btn-copy {
   display: inline-flex;
@@ -15,15 +15,297 @@
   color: var(--text-secondary);
   transition: var(--transition-smooth);
 }
-
 .btn-copy:hover {
   background: var(--ui-bg-elevated);
   color: var(--text-primary);
   border-color: var(--slate-300);
 }
-
 .btn-copy.copied {
   background: var(--success-50);
   border-color: var(--success-200);
   color: var(--success-700);
+}
+
+/* ========================================
+   2. BASE BUTTONS (ใช้ในหมวด Color & Variant / Icon & Shapes)
+   ======================================== */
+.btn-variant {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: 4px 15px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-weight: 400;
+  outline: none;
+  border: 1px solid transparent;
+}
+/* Hover พื้นฐาน (จะถูกนำไปใช้ในหมวด Icon & Shapes) */
+.btn-variant:hover {
+  border-color: #1677ff; 
+  color: #1677ff;
+  opacity: 1;
+}
+.btn-variant[class*="-link-"]:hover { text-decoration: underline; }
+
+/* --- Base Colors --- */
+.btn-solid-default { background: #141414; color: #fff; border-color: #141414; }
+.btn-outlined-default { background: #fff; color: rgba(0,0,0,0.88); border-color: #d9d9d9; }
+.btn-dashed-default { background: #fff; color: rgba(0,0,0,0.88); border: 1px dashed #d9d9d9; }
+.btn-filled-default { background: rgba(0,0,0,0.04); color: rgba(0,0,0,0.88); }
+.btn-text-default { background: transparent; color: rgba(0,0,0,0.88); }
+.btn-link-default { background: transparent; color: rgba(0,0,0,0.88); }
+
+.btn-solid-primary { background: #1677ff; color: #fff; border-color: #1677ff; }
+.btn-outlined-primary { background: #fff; color: #1677ff; border-color: #1677ff; }
+.btn-dashed-primary { background: #fff; color: #1677ff; border: 1px dashed #1677ff; }
+.btn-filled-primary { background: #e6f4ff; color: #1677ff; }
+.btn-text-primary { background: transparent; color: #1677ff; }
+.btn-link-primary { background: transparent; color: #1677ff; }
+
+.btn-solid-danger { background: #ff4d4f; color: #fff; border-color: #ff4d4f; }
+.btn-outlined-danger { background: #fff; color: #ff4d4f; border-color: #ff4d4f; }
+.btn-dashed-danger { background: #fff; color: #ff4d4f; border: 1px dashed #ff4d4f; }
+.btn-filled-danger { background: #fff1f0; color: #ff4d4f; }
+.btn-text-danger { background: transparent; color: #ff4d4f; }
+.btn-link-danger { background: transparent; color: #ff4d4f; }
+
+.btn-solid-pink { background: #eb2f96; color: #fff; border-color: #eb2f96; }
+.btn-outlined-pink { background: #fff; color: #eb2f96; border-color: #eb2f96; }
+.btn-dashed-pink { background: #fff; color: #eb2f96; border: 1px dashed #eb2f96; }
+.btn-filled-pink { background: #fff0f6; color: #eb2f96; }
+.btn-text-pink { background: transparent; color: #eb2f96; }
+.btn-link-pink { background: transparent; color: #eb2f96; }
+
+.btn-solid-purple { background: #722ed1; color: #fff; border-color: #722ed1; }
+.btn-outlined-purple { background: #fff; color: #722ed1; border-color: #722ed1; }
+.btn-dashed-purple { background: #fff; color: #722ed1; border: 1px dashed #722ed1; }
+.btn-filled-purple { background: #f9f0ff; color: #722ed1; }
+.btn-text-purple { background: transparent; color: #722ed1; }
+.btn-link-purple { background: transparent; color: #722ed1; }
+
+.btn-solid-cyan { background: #13c2c2; color: #fff; border-color: #13c2c2; }
+.btn-outlined-cyan { background: #fff; color: #13c2c2; border-color: #13c2c2; }
+.btn-dashed-cyan { background: #fff; color: #13c2c2; border: 1px dashed #13c2c2; }
+.btn-filled-cyan { background: #e6fffb; color: #13c2c2; }
+.btn-text-cyan { background: transparent; color: #13c2c2; }
+.btn-link-cyan { background: transparent; color: #13c2c2; }
+
+/* --- Button Shapes --- */
+.btn-circle {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border-radius: 50%;
+}
+.btn-square {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border-radius: 6px; 
+}
+.btn-with-icon {
+  gap: 8px;
+}
+
+/* ========================================
+   3. COLOR & VARIANT (SCOPED HOVER V2)
+   ======================================== */
+.suth-color-variant-section [class*="-filled-"]:hover,
+.suth-color-variant-section [class*="-text-"]:hover,
+.suth-color-variant-section [class*="-link-"]:hover {
+  border-color: transparent !important;
+}
+
+/* Default */
+.suth-color-variant-section .btn-solid-default:hover { background: #434343 !important; border-color: #434343 !important; color: #fff !important; }
+.suth-color-variant-section .btn-filled-default:hover { background: rgba(0,0,0,0.15) !important; color: rgba(0,0,0,0.88) !important; }
+.suth-color-variant-section .btn-text-default:hover { background: rgba(0,0,0,0.06) !important; color: rgba(0,0,0,0.88) !important; }
+.suth-color-variant-section .btn-link-default:hover { color: rgba(0,0,0,0.88) !important; background: transparent !important; }
+
+/* PRIMARY (Blue) */
+.suth-color-variant-section .btn-solid-primary:hover { 
+  background: #4096ff !important; 
+  border-color: #4096ff !important; 
+  color: #ffffff !important; 
+}
+.suth-color-variant-section .btn-filled-primary:hover { 
+  background: #bae0ff !important; 
+  color: #1677ff !important; 
+}
+.suth-color-variant-section .btn-text-primary:hover { 
+  background: rgba(22, 119, 255, 0.1) !important; 
+  color: #1677ff !important; 
+}
+.suth-color-variant-section .btn-link-primary:hover { 
+  color: #4096ff !important; 
+  background: transparent !important; 
+}
+
+/* Danger */
+.suth-color-variant-section .btn-solid-danger:hover { background: #ff7875 !important; border-color: #ff7875 !important; color: #fff !important;}
+.suth-color-variant-section .btn-outlined-danger:hover,
+.suth-color-variant-section .btn-dashed-danger:hover { border-color: #ff7875 !important; color: #ff7875 !important; }
+.suth-color-variant-section .btn-filled-danger:hover { background: #ffccc7 !important; color: #ff4d4f !important; }
+.suth-color-variant-section .btn-text-danger:hover { background: rgba(255, 77, 79, 0.1) !important; color: #ff4d4f !important; }
+.suth-color-variant-section .btn-link-danger:hover { color: #ff7875 !important; background: transparent !important; }
+
+/* Pink */
+.suth-color-variant-section .btn-solid-pink:hover { background: #f759ab !important; border-color: #f759ab !important; color: #fff !important; }
+.suth-color-variant-section .btn-outlined-pink:hover,
+.suth-color-variant-section .btn-dashed-pink:hover { border-color: #f759ab !important; color: #f759ab !important; }
+.suth-color-variant-section .btn-filled-pink:hover { background: #ffd6e7 !important; color: #eb2f96 !important; }
+.suth-color-variant-section .btn-text-pink:hover { background: rgba(235, 47, 150, 0.1) !important; color: #eb2f96 !important; }
+.suth-color-variant-section .btn-link-pink:hover { color: #f759ab !important; background: transparent !important; }
+
+/* Purple */
+.suth-color-variant-section .btn-solid-purple:hover { background: #9254de !important; border-color: #9254de !important; color: #fff !important; }
+.suth-color-variant-section .btn-outlined-purple:hover,
+.suth-color-variant-section .btn-dashed-purple:hover { border-color: #9254de !important; color: #9254de !important; }
+.suth-color-variant-section .btn-filled-purple:hover { background: #efdbff !important; color: #722ed1 !important; }
+.suth-color-variant-section .btn-text-purple:hover { background: rgba(114, 46, 209, 0.1) !important; color: #722ed1 !important; }
+.suth-color-variant-section .btn-link-purple:hover { color: #9254de !important; background: transparent !important; }
+
+/* Cyan */
+.suth-color-variant-section .btn-solid-cyan:hover { background: #36cfc9 !important; border-color: #36cfc9 !important; color: #fff !important; }
+.suth-color-variant-section .btn-outlined-cyan:hover,
+.suth-color-variant-section .btn-dashed-cyan:hover { border-color: #36cfc9 !important; color: #36cfc9 !important; }
+.suth-color-variant-section .btn-filled-cyan:hover { background: #b5f5ec !important; color: #13c2c2 !important; }
+.suth-color-variant-section .btn-text-cyan:hover { background: rgba(19, 194, 194, 0.1) !important; color: #13c2c2 !important; }
+.suth-color-variant-section .btn-link-cyan:hover { color: #36cfc9 !important; background: transparent !important; }
+
+/* ========================================
+   4. DISABLED STATE (PREMIUM SCOPED)
+   ======================================== */
+.suth-disabled-section .suth-btn-v2 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: 4px 15px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  font-weight: 400;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  color: rgba(0, 0, 0, 0.88);
+  outline: none;
+  text-decoration: none;
+}
+.suth-disabled-section .suth-btn-v2:not(:disabled):hover {
+  border-color: #4096ff !important;
+  color: #4096ff !important;
+  background: #fff;
+}
+
+.suth-disabled-section .suth-primary { background: #1677ff; border-color: #1677ff; color: #fff; }
+.suth-disabled-section .suth-primary:not(:disabled):hover { background: #4096ff !important; border-color: #4096ff !important; color: #fff !important; }
+
+.suth-disabled-section .suth-danger { background: #ff4d4f; border-color: #ff4d4f; color: #fff; }
+.suth-disabled-section .suth-danger:not(:disabled):hover { background: #ff7875 !important; border-color: #ff7875 !important; color: #fff !important; }
+
+.suth-disabled-section .suth-ghost { background: transparent !important; border-color: #d9d9d9; color: #fff; }
+.suth-disabled-section .suth-ghost:not(:disabled):hover { border-color: #4096ff !important; color: #4096ff !important; }
+
+.suth-disabled-section .suth-btn-v2:disabled {
+  cursor: not-allowed !important; 
+  background: #f5f5f5 !important;
+  color: rgba(0, 0, 0, 0.25) !important;
+  border-color: #d9d9d9 !important;
+}
+.suth-disabled-section .suth-ghost:disabled,
+.suth-disabled-section .suth-link:disabled,
+.suth-disabled-section .suth-text:disabled {
+  background: transparent !important;
+}
+
+/* --- Block Button --- */
+.btn-block {
+  width: 100%;
+}
+.btn-solid-primary:hover {
+  background: #4096ff !important;
+  border-color: #4096ff !important;
+  color: #ffffff !important; 
+}
+/* ========================================
+   SUTH DS - GRADIENT BUTTON & SIZES
+   ======================================== */
+.suth-btn-v2.btn-lg {
+  height: 40px;
+  padding: 6.4px 15px;
+  font-size: 16px;
+  border-radius: 8px;
+}
+.suth-btn-v2.btn-gradient {
+  position: relative;
+  color: #fff !important;
+  border: 0 !important;
+  background: #fa8c16 !important; 
+  z-index: 1;
+  overflow: hidden;
+}
+.suth-btn-v2.btn-gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #ff7a45, #ffc069); 
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  opacity: 1; 
+}
+.suth-btn-v2.btn-gradient:hover::before {
+  opacity: 0; 
+}
+.suth-btn-v2:not(.btn-gradient):not(:disabled):hover {
+  border-color: #1677ff !important;
+  color: #1677ff !important;
+  background-color: #fff !important;
+}
+
+/* ========================================
+   SUTH DS - FLOAT BUTTON
+   ======================================== */
+.float-preview-container {
+  position: relative; 
+  height: 250px;
+  width: 100%;
+  background-color: #fafafa;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 20px;
+}
+.suth-float-btn {
+  position: absolute;
+  bottom: 24px;     
+  right: 24px;        
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; 
+  background-color: #fff;
+  border: none;       
+  box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  color: rgba(0, 0, 0, 0.88);
+  z-index: 99;
+}
+.suth-float-btn:hover {
+  background-color: #f5f5f5; 
+}
+.suth-float-btn.suth-primary {
+  background-color: #1677ff;
+  color: #fff;
+}
+.suth-float-btn.suth-primary:hover {
+  background-color: #4096ff;
 }

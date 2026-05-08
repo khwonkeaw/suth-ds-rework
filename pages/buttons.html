@@ -1,233 +1,366 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale="1.0", maximum-scale="5.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#2563EB">
   <title>SUTH Design System v2.0.0 - Buttons</title>
   <meta name="description" content="SUTH Design System v2.0.0 - Versatile buttons with variants, sizes, states & interactive effects">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  <!-- Fonts -->
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- Design System CSS -->
   <link rel="stylesheet" href="../suth-ds.min.css">
-
-  <!-- DataTables CSS -->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="../css/index-custom.css">
 </head>
-<body>
-  
-  <!-- Toast Container -->
-  <div class="toast-container" id="toastContainer"></div>
 
-  <!-- Sidebar Overlay -->
+<body>
+  <div class="toast-container" id="toastContainer"></div>
   <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
 
- 
-
-    <!-- Main Content -->
-    <main class="ds-main">
-
-      <!-- Buttons -->
-      <section class="ds-section" id="buttons">
-        <div class="ds-section-header">
-          <div>
-            <h2 class="ds-section-title">Buttons</h2>
-            <p class="ds-section-desc">Versatile buttons with variants, sizes, states & interactive effects.</p>
-          </div>
-          <span class="ds-section-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 7h10"/></svg>
-            3 Styles
-          </span>
+  <main class="ds-main">
+    <section class="ds-section" id="buttons">
+      <div class="ds-section-header">
+        <div>
+          <h2 class="ds-section-title">Buttons</h2>
+          <p class="ds-section-desc">Versatile buttons with variants, sizes, states & interactive effects.</p>
         </div>
+        <span class="ds-section-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+            <path d="M7 7h10" />
+          </svg>
+          3 Styles
+        </span>
+      </div>
 
-        <!-- Variants & Styles -->
-        <div class="ds-component">
-          <div class="ds-component-header">
-            <span class="ds-component-title">Variants & Styles</span>
-            <button class="btn-copy" onclick="copyCode('btn-styles')">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-              Copy
-            </button>
+    
+      <div class="ds-component suth-color-variant-section">
+        <div class="ds-component-header">
+          <span class="ds-component-title">Color & Variant</span>
+          <button class="btn-copy" onclick="copyCode('btn-color-variant')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+            Copy
+          </button>
+        </div>
+        <div class="ds-component-preview">
+          <div class="d-flex flex-column gap-3">
+            <div class="d-flex gap-2 flex-wrap">
+              <button type="button" class="btn-variant btn-solid-default">Solid</button>
+              <button type="button" class="btn-variant btn-outlined-default">Outlined</button>
+              <button type="button" class="btn-variant btn-dashed-default">Dashed</button>
+              <button type="button" class="btn-variant btn-filled-default">Filled</button>
+              <button type="button" class="btn-variant btn-text-default">Text</button>
+              <button type="button" class="btn-variant btn-link-default">Link</button>
+            </div>
+            <div class="d-flex gap-2 flex-wrap">
+              <button type="button" class="btn-variant btn-solid-primary">Solid</button>
+              <button type="button" class="btn-variant btn-outlined-primary">Outlined</button>
+              <button type="button" class="btn-variant btn-dashed-primary">Dashed</button>
+              <button type="button" class="btn-variant btn-filled-primary">Filled</button>
+              <button type="button" class="btn-variant btn-text-primary">Text</button>
+              <button type="button" class="btn-variant btn-link-primary">Link</button>
+            </div>
+            <div class="d-flex gap-2 flex-wrap">
+              <button type="button" class="btn-variant btn-solid-danger">Solid</button>
+              <button type="button" class="btn-variant btn-outlined-danger">Outlined</button>
+              <button type="button" class="btn-variant btn-dashed-danger">Dashed</button>
+              <button type="button" class="btn-variant btn-filled-danger">Filled</button>
+              <button type="button" class="btn-variant btn-text-danger">Text</button>
+              <button type="button" class="btn-variant btn-link-danger">Link</button>
+            </div>
+            <div class="d-flex gap-2 flex-wrap">
+              <button type="button" class="btn-variant btn-solid-pink">Solid</button>
+              <button type="button" class="btn-variant btn-outlined-pink">Outlined</button>
+              <button type="button" class="btn-variant btn-dashed-pink">Dashed</button>
+              <button type="button" class="btn-variant btn-filled-pink">Filled</button>
+              <button type="button" class="btn-variant btn-text-pink">Text</button>
+              <button type="button" class="btn-variant btn-link-pink">Link</button>
+            </div>
+            <div class="d-flex gap-2 flex-wrap">
+              <button type="button" class="btn-variant btn-solid-purple">Solid</button>
+              <button type="button" class="btn-variant btn-outlined-purple">Outlined</button>
+              <button type="button" class="btn-variant btn-dashed-purple">Dashed</button>
+              <button type="button" class="btn-variant btn-filled-purple">Filled</button>
+              <button type="button" class="btn-variant btn-text-purple">Text</button>
+              <button type="button" class="btn-variant btn-link-purple">Link</button>
+            </div>
+            <div class="d-flex gap-2 flex-wrap">
+              <button type="button" class="btn-variant btn-solid-cyan">Solid</button>
+              <button type="button" class="btn-variant btn-outlined-cyan">Outlined</button>
+              <button type="button" class="btn-variant btn-dashed-cyan">Dashed</button>
+              <button type="button" class="btn-variant btn-filled-cyan">Filled</button>
+              <button type="button" class="btn-variant btn-text-cyan">Text</button>
+              <button type="button" class="btn-variant btn-link-cyan">Link</button>
+            </div>
           </div>
-          <div class="ds-component-preview">
-            <!-- Solid Variants -->
-            <div class="preview-row" style="margin-bottom: 16px;">
-              <button class="btn btn-primary">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
-                Primary
+        </div>
+        <div class="ds-component-code">
+          <div class="ds-component-code-header">
+            <span class="ds-component-code-lang">HTML</span>
+          </div>
+          <pre id="btn-color-variant"><code><span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn-variant btn-solid-primary"</span><span class="token-tag">&gt;</span>Solid<span class="token-tag">&lt;/button&gt;</span>
+<span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn-variant btn-outlined-primary"</span><span class="token-tag">&gt;</span>Outlined<span class="token-tag">&lt;/button&gt;</span>
+<span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn-variant btn-dashed-primary"</span><span class="token-tag">&gt;</span>Dashed<span class="token-tag">&lt;/button&gt;</span>
+<span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn-variant btn-filled-primary"</span><span class="token-tag">&gt;</span>Filled<span class="token-tag">&lt;/button&gt;</span></code></pre>
+        </div>
+      </div>
+
+      <div class="ds-component">
+        <div class="ds-component-header">
+          <span class="ds-component-title">Icon & Shapes</span>
+          <button class="btn-copy" onclick="copyCode('btn-icon-shapes')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+            Copy
+          </button>
+        </div>
+        <div class="ds-component-preview">
+          <div class="d-flex flex-column gap-3">
+            <div class="d-flex gap-2 flex-wrap align-items-center">
+              <button type="button" class="btn-variant btn-solid-primary btn-circle" title="search">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               </button>
-              <button class="btn btn-success">Success</button>
-              <button class="btn btn-danger">Danger</button>
-              <button class="btn btn-warning">Warning</button>
-              <button class="btn btn-info">Info</button>
-              <button class="btn btn-secondary">Secondary</button>
-            </div>
-            <!-- Alternative Styles -->
-            <div class="preview-row" style="margin-bottom: 16px;">
-              <button class="btn btn-soft-warning">Soft</button>
-              <button class="btn btn-outline-info">Outline</button>
-              <button class="btn btn-ghost-secondary">Ghost</button>
-              <button class="btn btn-link">Link</button>
-            </div>
-            <!-- Sizes -->
-            <div class="preview-row" style="margin-bottom: 16px;">
-              <button class="btn btn-primary btn-xs">XS</button>
-              <button class="btn btn-primary btn-sm">Small</button>
-              <button class="btn btn-primary">Medium</button>
-              <button class="btn btn-primary btn-lg">Large</button>
-              <button class="btn btn-primary btn-xl">XL</button>
-            </div>
-            <!-- Shapes -->
-            <div class="preview-row" style="margin-top: 16px; flex-wrap: wrap;">
-              <button class="btn btn-primary" style="border-radius: 9999px;">Pill Shape</button>
-              <button class="btn btn-secondary" style="border-radius: 4px;">Sharp</button>
-              <button class="btn btn-primary btn-block" style="max-width: 300px;">Block Button</button>
-            </div>
-          </div>
-          <div class="ds-component-code">
-            <div class="ds-component-code-header">
-              <span class="ds-component-code-lang">HTML</span>
-            </div>
-            <pre id="btn-styles"><code><span class="token-comment">&lt;!-- Solid Variants --&gt;</span>
-<span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn btn-primary"</span><span class="token-tag">&gt;</span>
-  <span class="token-tag">&lt;svg</span> <span class="token-attr">width</span>=<span class="token-value">"14"</span> <span class="token-attr">height</span>=<span class="token-value">"14"</span> <span class="token-attr">stroke</span>=<span class="token-value">"currentColor"</span><span class="token-tag">&gt;</span>...<span class="token-tag">&lt;/svg&gt;</span> Primary
-<span class="token-tag">&lt;/button&gt;</span>
-<span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn btn-success"</span><span class="token-tag">&gt;</span>Success<span class="token-tag">&lt;/button&gt;</span>
-<span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn btn-danger"</span><span class="token-tag">&gt;</span>Danger<span class="token-tag">&lt;/button&gt;</span>
-
-<span class="token-comment">&lt;!-- Alternative Styles --&gt;</span>
-<span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn btn-soft-warning"</span><span class="token-tag">&gt;</span>Soft<span class="token-tag">&lt;/button&gt;</span>
-<span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn btn-outline-info"</span><span class="token-tag">&gt;</span>Outline<span class="token-tag">&lt;/button&gt;</span>
-<span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn btn-ghost-secondary"</span><span class="token-tag">&gt;</span>Ghost<span class="token-tag">&lt;/button&gt;</span>
-
-<span class="token-comment">&lt;!-- Sizes: btn-xs, btn-sm, btn-lg, btn-xl --&gt;</span>
-<span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn btn-primary btn-sm"</span><span class="token-tag">&gt;</span>Small<span class="token-tag">&lt;/button&gt;</span>
-<span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn btn-primary btn-lg"</span><span class="token-tag">&gt;</span>Large<span class="token-tag">&lt;/button&gt;</span>
-
-<span class="token-comment">&lt;!-- Shapes --&gt;</span>
-<span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn btn-primary"</span> <span class="token-attr">style</span>=<span class="token-value">"border-radius: 9999px;"</span><span class="token-tag">&gt;</span>Pill<span class="token-tag">&lt;/button&gt;</span>
-<span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn btn-primary btn-block"</span><span class="token-tag">&gt;</span>Block<span class="token-tag">&lt;/button&gt;</span></code></pre>
-          </div>
-        </div>
-
-        <!-- States & Effects -->
-        <div class="ds-component">
-          <div class="ds-component-header">
-            <span class="ds-component-title">States & Effects</span>
-            <button class="btn-copy" onclick="copyCode('btn-states')">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-              Copy
-            </button>
-          </div>
-          <div class="ds-component-preview">
-            <div class="preview-row" style="align-items: center; flex-wrap: wrap; gap: 12px;">
-              <button class="btn btn-primary">Normal</button>
-              <button class="btn btn-primary" disabled>Disabled</button>
-              <button class="btn btn-primary is-loading">Loading</button>
-              <button class="btn btn-secondary" onclick="this.classList.toggle('is-loading'); this.textContent = this.classList.contains('is-loading') ? 'Loading...' : 'Click to Load'">Click to Load</button>
-              <button class="btn btn-icon btn-primary" title="Edit">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+              <button type="button" class="btn-variant btn-solid-primary btn-circle">A</button>
+              <button type="button" class="btn-variant btn-solid-primary btn-with-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> Search
               </button>
-              <button class="btn btn-primary btn-press-effect">Press</button>
-              <button class="btn btn-primary btn-elevate">Elevate</button>
+              <button type="button" class="btn-variant btn-outlined-default btn-circle" title="search">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              </button>
+              <button type="button" class="btn-variant btn-outlined-default btn-with-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> Search
+              </button>
             </div>
-            <div class="preview-row" style="margin-top: 16px; padding: 12px 16px; background: var(--slate-50); border-radius: 8px;">
-              <span class="text-sm" style="color: var(--slate-600);">💡 Try: Click "Click to Load" button, hover over "Elevate" for shadow effect</span>
+            <div class="d-flex gap-2 flex-wrap align-items-center">
+              <button type="button" class="btn-variant btn-outlined-default btn-circle" title="search">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              </button>
+              <button type="button" class="btn-variant btn-outlined-default btn-with-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> Search
+              </button>
+              <button type="button" class="btn-variant btn-dashed-default btn-circle" title="search">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              </button>
+              <button type="button" class="btn-variant btn-dashed-default btn-with-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> Search
+              </button>
+              <a href="https://www.google.com" target="_blank" class="btn-variant btn-outlined-default btn-square">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              </a>
             </div>
-          </div>
-          <div class="ds-component-code">
-            <div class="ds-component-code-header">
-              <span class="ds-component-code-lang">HTML</span>
-            </div>
-            <pre id="btn-states"><code><span class="token-comment">&lt;!-- States --&gt;</span>
-<span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn btn-primary"</span><span class="token-tag">&gt;</span>Normal<span class="token-tag">&lt;/button&gt;</span>
-<span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn btn-primary"</span> <span class="token-attr">disabled</span><span class="token-tag">&gt;</span>Disabled<span class="token-tag">&lt;/button&gt;</span>
-<span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn btn-primary is-loading"</span><span class="token-tag">&gt;</span>Loading<span class="token-tag">&lt;/button&gt;</span>
-
-<span class="token-comment">&lt;!-- Icon Only --&gt;</span>
-<span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn btn-icon btn-primary"</span> <span class="token-attr">title</span>=<span class="token-value">"Edit"</span><span class="token-tag">&gt;</span>
-  <span class="token-tag">&lt;svg</span> <span class="token-attr">width</span>=<span class="token-value">"16"</span> <span class="token-attr">height</span>=<span class="token-value">"16"</span> <span class="token-attr">stroke</span>=<span class="token-value">"currentColor"</span><span class="token-tag">&gt;</span>...<span class="token-tag">&lt;/svg&gt;</span>
-<span class="token-tag">&lt;/button&gt;</span>
-
-<span class="token-comment">&lt;!-- Effects --&gt;</span>
-<span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn btn-primary btn-press-effect"</span><span class="token-tag">&gt;</span>Press<span class="token-tag">&lt;/button&gt;</span>
-<span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn btn-primary btn-elevate"</span><span class="token-tag">&gt;</span>Elevate<span class="token-tag">&lt;/button&gt;</span></code></pre>
           </div>
         </div>
-
-        <!-- Button Groups -->
-        <div class="ds-component">
-          <div class="ds-component-header">
-            <span class="ds-component-title">Button Groups</span>
-            <button class="btn-copy" onclick="copyCode('btn-groups')">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-              Copy
-            </button>
+        <div class="ds-component-code">
+          <div class="ds-component-code-header">
+            <span class="ds-component-code-lang">HTML</span>
           </div>
-          <div class="ds-component-preview">
-            <div class="preview-row" style="align-items: center; flex-wrap: wrap; gap: 20px;">
-              <div class="btn-group">
-                <button class="btn btn-secondary btn-sm" onclick="setActiveBtn(this)">Day</button>
-                <button class="btn btn-secondary btn-sm active" onclick="setActiveBtn(this)">Week</button>
-                <button class="btn btn-secondary btn-sm" onclick="setActiveBtn(this)">Month</button>
-              </div>
-              <div class="btn-group">
-                <button class="btn btn-secondary btn-sm" onclick="setActiveBtn(this)">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/></svg>
-                </button>
-                <button class="btn btn-secondary btn-sm active" onclick="setActiveBtn(this)">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/></svg>
-                </button>
-              </div>
-              <div class="btn-group-separated">
-                <button class="btn btn-primary" onclick="showToast('Saved!', 'success')">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/></svg>
-                  Save
-                </button>
-                <button class="btn btn-secondary" onclick="showToast('Cancelled', 'info')">Cancel</button>
-              </div>
-            </div>
-          </div>
-          <div class="ds-component-code">
-            <div class="ds-component-code-header">
-              <span class="ds-component-code-lang">HTML</span>
-            </div>
-            <pre id="btn-groups"><code><span class="token-comment">&lt;!-- Joined Group --&gt;</span>
-<span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"btn-group"</span><span class="token-tag">&gt;</span>
-  <span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn btn-secondary btn-sm"</span><span class="token-tag">&gt;</span>Day<span class="token-tag">&lt;/button&gt;</span>
-  <span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn btn-secondary btn-sm active"</span><span class="token-tag">&gt;</span>Week<span class="token-tag">&lt;/button&gt;</span>
-  <span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn btn-secondary btn-sm"</span><span class="token-tag">&gt;</span>Month<span class="token-tag">&lt;/button&gt;</span>
-<span class="token-tag">&lt;/div&gt;</span>
+          <pre id="btn-icon-shapes"><code><span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn-variant btn-solid-primary btn-circle"</span><span class="token-tag">&gt;</span><span class="token-tag">&lt;/button&gt;</span>
+<span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn-variant btn-dashed-default btn-with-icon"</span><span class="token-tag">&gt;</span>Search<span class="token-tag">&lt;/button&gt;</span></code></pre>
+        </div>
+      </div>
 
-<span class="token-comment">&lt;!-- Separated Group --&gt;</span>
-<span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"btn-group-separated"</span><span class="token-tag">&gt;</span>
-  <span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn btn-primary"</span><span class="token-tag">&gt;</span>Save<span class="token-tag">&lt;/button&gt;</span>
-  <span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn btn-secondary"</span><span class="token-tag">&gt;</span>Cancel<span class="token-tag">&lt;/button&gt;</span>
-<span class="token-tag">&lt;/div&gt;</span></code></pre>
+      <div class="ds-component suth-disabled-section">
+        <div class="ds-component-header">
+          <span class="ds-component-title">Disabled State</span>
+          <button class="btn-copy" onclick="copyCode('btn-disabled-v2')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+            Copy
+          </button>
+        </div>
+        <div class="ds-component-preview">
+          <div class="d-flex flex-column gap-3">
+            <div class="d-flex gap-3 align-items-center">
+              <button type="button" class="suth-btn-v2 suth-primary">Primary</button>
+              <button type="button" class="suth-btn-v2 suth-primary" disabled>Primary(disabled)</button>
+            </div>
+            <div class="d-flex gap-3 align-items-center">
+              <button type="button" class="suth-btn-v2">Default</button>
+              <button type="button" class="suth-btn-v2" disabled>Default(disabled)</button>
+            </div>
+            <div class="d-flex gap-3 align-items-center">
+              <button type="button" class="suth-btn-v2" style="border-style: dashed;">Dashed</button>
+              <button type="button" class="suth-btn-v2" style="border-style: dashed;" disabled>Dashed(disabled)</button>
+            </div>
+            <div class="d-flex gap-3 align-items-center">
+              <button type="button" class="suth-btn-v2 suth-danger">Danger Default</button>
+              <button type="button" class="suth-btn-v2 suth-danger" disabled>Danger Default(disabled)</button>
+            </div>
+            <div class="site-button-ghost-wrapper d-flex gap-3 align-items-center" style="background: #bec8c8; padding: 20px; border-radius: 8px; width: fit-content;">
+              <button type="button" class="suth-btn-v2 suth-ghost">Ghost</button>
+              <button type="button" class="suth-btn-v2 suth-ghost" disabled>Ghost(disabled)</button>
+            </div>
           </div>
         </div>
-      </section>
-
-      <!-- Footer -->
-      <div class="divider-fancy">
-        <span class="divider-fancy-text">SUTH Design System v2.0.0</span>
+        <div class="ds-component-code">
+          <div class="ds-component-code-header">
+            <span class="ds-component-code-lang">HTML</span>
+          </div>
+          <pre id="btn-disabled-v2"><code><span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"suth-btn-v2 suth-primary"</span><span class="token-tag">&gt;</span>Primary<span class="token-tag">&lt;/button&gt;</span>
+<span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"suth-btn-v2 suth-primary"</span> <span class="token-attr">disabled</span><span class="token-tag">&gt;</span>Disabled<span class="token-tag">&lt;/button&gt;</span></code></pre>
+        </div>
       </div>
       
-      <footer style="text-align: center; padding: 40px 0; color: var(--text-muted);">
-        <p style="margin-bottom: 8px;">© 2024 Suranaree University of Technology Hospital</p>
-        <p style="font-size: 0.8125rem;">Built with care for healthcare professionals</p>
-      </footer>
+      <div class="ds-component">
+        <div class="ds-component-header">
+          <span class="ds-component-title">States & Effects</span>
+          <button class="btn-copy" onclick="copyCode('btn-states')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+            Copy
+          </button>
+        </div>
+        <div class="ds-component-preview">
+          <div class="preview-row" style="align-items: center; flex-wrap: wrap; gap: 12px;">
+            <button class="btn btn-primary">Normal</button>
+            <button class="btn btn-primary is-loading">Loading</button>
+            <button class="btn btn-secondary" onclick="this.classList.toggle('is-loading'); this.textContent = this.classList.contains('is-loading') ? 'Loading...' : 'Click to Load'">Click to Load</button>
+            <button class="btn btn-icon btn-primary" title="Edit">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+              </svg>
+            </button>
+            <button class="btn btn-primary btn-press-effect">Press</button>
+            <button class="btn btn-primary btn-elevate">Elevate</button>
+          </div>
+        </div>
+        <div class="ds-component-code">
+          <div class="ds-component-code-header">
+            <span class="ds-component-code-lang">HTML</span>
+          </div>
+          <pre id="btn-states"><code><span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn btn-primary is-loading"</span><span class="token-tag">&gt;</span>Loading<span class="token-tag">&lt;/button&gt;</span></code></pre>
+        </div>
+      </div>
 
+      <div class="ds-component">
+        <div class="ds-component-header">
+          <span class="ds-component-title">Button Groups</span>
+          <button class="btn-copy" onclick="copyCode('btn-groups')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+            Copy
+          </button>
+        </div>
+        <div class="ds-component-preview">
+          <div class="preview-row" style="align-items: center; flex-wrap: wrap; gap: 20px;">
+            <div class="btn-group">
+              <button class="btn btn-secondary btn-sm" onclick="setActiveBtn(this)">Day</button>
+              <button class="btn btn-secondary btn-sm active" onclick="setActiveBtn(this)">Week</button>
+              <button class="btn btn-secondary btn-sm" onclick="setActiveBtn(this)">Month</button>
+            </div>
+            <div class="btn-group-separated">
+              <button class="btn btn-primary" onclick="showToast('Saved!', 'success')">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
+                </svg> Save
+              </button>
+              <button class="btn btn-secondary" onclick="showToast('Cancelled', 'info')">Cancel</button>
+            </div>
+          </div>
+        </div>
+        <div class="ds-component-code">
+          <div class="ds-component-code-header">
+            <span class="ds-component-code-lang">HTML</span>
+          </div>
+          <pre id="btn-groups"><code><span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-value">"btn-group"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn btn-secondary"</span><span class="token-tag">&gt;</span>Left<span class="token-tag">&lt;/button&gt;</span>
+  <span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"btn btn-secondary"</span><span class="token-tag">&gt;</span>Right<span class="token-tag">&lt;/button&gt;</span>
+<span class="token-tag">&lt;/div&gt;</span></code></pre>
+     </div>
+      </div>
 
-    </main>
-  </div>
+      <!-- --- Block Button --- -->
+      <div class="ds-component">
+        <div class="ds-component-header">
+          <span class="ds-component-title">Block Button</span>
+          <button class="btn-copy" onclick="copyCode('btn-block')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+            Copy
+          </button>
+        </div>
 
+        <div class="ds-component-preview">
+          <div class="d-flex flex-column gap-3" style="width: 100%;">
+            <button type="button" class="btn-variant btn-solid-primary btn-block">Primary</button>
+            <button type="button" class="btn-variant btn-outlined-default btn-block">Default</button>
+            <button type="button" class="btn-variant btn-dashed-default btn-block">Dashed</button>
+            <button type="button" class="btn-variant btn-outlined-default btn-block" disabled>Disabled</button>
+            <button type="button" class="btn-variant btn-text-default btn-block">Text</button>
+            <button type="button" class="btn-variant btn-link-default btn-block">Link</button>
+          </div>
+        </div>
 
- 
+        <div class="ds-component-code">
+          <div class="ds-component-code-header">
+            <span class="ds-component-code-lang">HTML</span>
+          </div>
+          <pre id="btn-block"><code><span class="token-tag">&lt;button</span> <span class="token-attr">type</span>=<span class="token-value">"button"</span> <span class="token-attr">class</span>=<span class="token-value">"btn-variant btn-solid-primary btn-block"</span><span class="token-tag">&gt;</span>Primary<span class="token-tag">&lt;/button&gt;</span>
+<span class="token-tag">&lt;button</span> <span class="token-attr">type</span>=<span class="token-value">"button"</span> <span class="token-attr">class</span>=<span class="token-value">"btn-variant btn-outlined-default btn-block"</span><span class="token-tag">&gt;</span>Default<span class="token-tag">&lt;/button&gt;</span>
+<span class="token-tag">&lt;button</span> <span class="token-attr">type</span>=<span class="token-value">"button"</span> <span class="token-attr">class</span>=<span class="token-value">"btn-variant btn-dashed-default btn-block"</span><span class="token-tag">&gt;</span>Dashed<span class="token-tag">&lt;/button&gt;</span></code></pre>
+        </div>
+      </div>
+
+<div class="ds-component">
+        <div class="ds-component-header">
+          <span class="ds-component-title">Gradient Button</span>
+          <button class="btn-copy" onclick="copyCode('btn-gradient')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+            Copy
+          </button>
+        </div>
+
+        <div class="ds-component-preview">
+          <div class="d-flex gap-3 align-items-center">
+            <button type="button" class="suth-btn-v2 btn-lg btn-gradient" style="gap: 8px;">
+              Gradient Button
+            </button>
+            <button type="button" class="suth-btn-v2 btn-lg">Button</button>
+          </div>
+        </div>
+
+        <div class="ds-component-code">
+          <div class="ds-component-code-header">
+            <span class="ds-component-code-lang">HTML</span>
+          </div>
+          <pre id="btn-gradient"><code><span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"suth-btn-v2 btn-lg btn-gradient"</span><span class="token-tag">&gt;</span>Gradient Button<span class="token-tag">&lt;/button&gt;</span>
+<span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-value">"suth-btn-v2 btn-lg"</span><span class="token-tag">&gt;</span>Button<span class="token-tag">&lt;/button&gt;</span></code></pre>
+        </div>
+      </div>
+      
+    </section>
+
+    <div class="divider-fancy">
+      <span class="divider-fancy-text">SUTH Design System v2.0.0</span>
+    </div>
+
+    <footer style="text-align: center; padding: 40px 0; color: var(--text-muted);">
+      <p style="margin-bottom: 8px;">© 2024 Suranaree University of Technology Hospital</p>
+      <p style="font-size: 0.8125rem;">Built with care for healthcare professionals</p>
+    </footer>
+
+  </main>
 </body>
 </html>
